@@ -6,6 +6,8 @@ class Scene
 {
 private:
 	int id;
+	int nbObjet;
+	int idTrajectoire;
 	
 public:
 	Scene();
