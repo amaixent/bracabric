@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(ImacGL)
+project(bricabrac)
 
 add_definitions(-std=c++11)
 
@@ -13,13 +13,13 @@ find_package(GLEW REQUIRED)
 # Pour gérer un bug a la fac, a supprimer sur machine perso:
 #set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
 
-include_directories(${SDL2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} glimac/include third-party/include)
+include_directories(${SDL2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} third-party/glimac/include third-party/glm third-party/assimp)
 
-set(ALL_LIBRARIES glimac ${SDL2_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
+set(ALL_LIBRARIES glimac ${SDL2_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} assimp)
 
 message(${SDL2_LIBRARY})
 
-add_subdirectory(glimac)
+add_subdirectory(third-party)
 
 file(GLOB projet_DIRECTORIES "projet*")
 
