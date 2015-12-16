@@ -25,7 +25,7 @@
 /// @date 2009-04-29 / 2011-06-15
 /// @author Christophe Riccio
 ///////////////////////////////////////////////////////////////////////////////////
-
+#define GLM_FORCE_RADIANS
 #include "../geometric.hpp"
 #include "../trigonometric.hpp"
 #include "../matrix.hpp"
