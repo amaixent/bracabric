@@ -1,5 +1,5 @@
-file(GLOB HEADER_FILES *.hpp)
-file(GLOB SRC_FILES *.cpp)
+include_directories(include/)
+file(GLOB_RECURSE SRC_FILES *.cpp *.hpp)
 file(GLOB_RECURSE SHADER_FILES *.glsl)
 
 foreach(SRC_FILE ${SRC_FILES})
@@ -11,3 +11,4 @@ foreach(SRC_FILE ${SRC_FILES})
 endforeach()
 
 file(COPY shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+

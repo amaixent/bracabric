@@ -26,3 +26,5 @@ file(GLOB projet_DIRECTORIES "projet*")
 foreach(projet ${projet_DIRECTORIES})
     add_subdirectory(${projet})
 endforeach()
+
+file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
