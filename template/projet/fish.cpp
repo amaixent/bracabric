@@ -38,7 +38,10 @@ int main(int argc, char** argv) {
     Shader ourShader("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl");
 
     // Load models
-    Model ourModel("assets/OBJET3D/nanosuit/nanosuit.obj");
+
+    Model ourModel2("assets/models/scene3/house/fw43_lowpoly_n1.3ds");
+    Model ourModel("assets/models/scene3/nanosuit/nanosuit.obj");
+
    // Model ourModel("assets/OBJET3D/Animaux/fish.3DS");
 
     /*********************************
@@ -65,7 +68,7 @@ int main(int argc, char** argv) {
         //On nettoit la fenêtre
         glClear(GL_COLOR_BUFFER_BIT);
 
-         glClearColor(1.0f, 1.0f, 0.05f, 1.0f);
+         glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         ourShader.Use();   // <-- Don't forget this one!
@@ -76,12 +79,19 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(glGetUniformLocation(ourShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
         // Draw the loaded model
+        glm::mat4 model2;
+        model2 = glm::translate(model2, glm::vec3(0.0f, 0.0f, -5.0f)); // Translate it down a bit so it's at the center of the scene
+        model2 = glm::scale(model2, glm::vec3(0.5f, 0.5f, 0.5f)); // It's a bit too big for our scene, so scale it down
+        glUniformMatrix4fv(glGetUniformLocation(ourShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model2));
+        ourModel2.Draw(ourShader);
+
         glm::mat4 model;
         model = glm::translate(model, glm::vec3(0.0f, -1.75f, -5.0f)); // Translate it down a bit so it's at the center of the scene
         model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f)); // It's a bit too big for our scene, so scale it down
         glUniformMatrix4fv(glGetUniformLocation(ourShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
         
         ourModel.Draw(ourShader);
+
 
 
         // Update the display
