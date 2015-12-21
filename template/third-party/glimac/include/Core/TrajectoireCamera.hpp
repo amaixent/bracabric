@@ -15,6 +15,15 @@ private:
 	//float angle_actuel;
 	//float angle_zero[];
 	
+	vec3 m_Position;
+	float m_fPhi;
+	float m_fTheta;
+	vec3 m_FrontVector;
+	vec3 m_LeftVector;
+	vec3 m_UpVector;
+
+	void computeDirectionVectors();
+
 public:
 	TrajectoireCamera(int id, vec3 position[]);
 	~TrajectoireCamera();
@@ -24,7 +33,9 @@ public:
 	mat3 pivotement(float angle);
 	mat3 positionSuivante(int idPositionActuel, mat3 position);
 	//load_trajectoire(fichier) a voir avec hamlet
-
+	void rotateLeft(float degrees);
+	void rotateUp(float degrees);
+	mat4 getViewMatrix() const;
 	/* data */
 };
 }
