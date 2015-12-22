@@ -6,7 +6,9 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 
-#include <Core/TrajectoireCamera.hpp>
+#include <Core/Trajectoire.hpp>
+#include <Camera/FreeflyCamera.hpp>
+
 
 #include "Shader_site.hpp"
 #include "Model.hpp"
@@ -30,16 +32,11 @@ int main(int argc, char** argv) {
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
-    vec3 position1 = vec3(0.0f, 0.0f, 0.0f);
-    vec3 position2 = vec3(0.0f, 0.0f, 5.0f);
-    vec3 position3 = vec3(0.0f, 0.0f, 10.0f);
+    mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
 
-    vec3 tableau_position[3];
-    tableau_position[0] = position1;
-    tableau_position[1] = position2;
-    tableau_position[2] = position3;
+    Trajectoire trajectoire(1, positions);
 
-    TrajectoireCamera trajcam(1, tableau_position);
+    FreeflyCamera freefly;
 
     //Define the viewport dimensions
     glViewport(0, 0, screenWidth, screenHeight);
@@ -78,15 +75,14 @@ int main(int argc, char** argv) {
                 float mousePosX = mousePos.x/800.0f - 0.5;
                 float mousePosY = mousePos.y/600.0f - 0.5;
 
-                trajcam.rotateLeft(-2*mousePosX);
-                trajcam.rotateUp(-2*mousePosY);
+                freefly.rotateLeft(-2*mousePosX);
+                freefly.rotateUp(-2*mousePosY);
             }
                 
-
-                if (windowManager.isKeyPressed(SDLK_i)) trajcam.rotateUp(0.5);
-                if (windowManager.isKeyPressed(SDLK_k)) trajcam.rotateUp(-0.5);
-                if (windowManager.isKeyPressed(SDLK_j)) trajcam.rotateLeft(0.5);
-                if (windowManager.isKeyPressed(SDLK_l)) trajcam.rotateLeft(-0.5);
+                if (windowManager.isKeyPressed(SDLK_i)) freefly.rotateUp(0.5);
+                if (windowManager.isKeyPressed(SDLK_k)) freefly.rotateUp(-0.5);
+                if (windowManager.isKeyPressed(SDLK_j)) freefly.rotateLeft(0.5);
+                if (windowManager.isKeyPressed(SDLK_l)) freefly.rotateLeft(-0.5);
         }
 
         /*********************************
@@ -102,7 +98,7 @@ int main(int argc, char** argv) {
         ourShader.Use();   // <-- Don't forget this one!
         // Transformation matrices
         glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);/*aiMemoryInfo::cameras.Zoom*/
-        glm::mat4 view = trajcam.getViewMatrix();//aiMemoryInfo::cameras.GetViewMatrix();
+        glm::mat4 view = freefly.getViewMatrix();//aiMemoryInfo::cameras.GetViewMatrix();
         glUniformMatrix4fv(glGetUniformLocation(ourShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
         glUniformMatrix4fv(glGetUniformLocation(ourShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
