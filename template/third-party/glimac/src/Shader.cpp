@@ -1,8 +1,14 @@
-#include "Shader_site.hpp"
+#include "Shader.hpp"
 
 using namespace std;
 
-Shader::Shader(const GLchar* vertexPath, const GLchar* fragmentPath){
+Shader::Shader(){
+    //on charge un shader considérer comme le shader de base.
+    // Shader ourShader("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl");
+
+}
+
+void Shader::loadShader(string vertexPath, string fragmentPath){
 
     /**** Load vertex and fragment shader from source *****/
     string vertexCode;

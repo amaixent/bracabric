@@ -26,10 +26,14 @@ class Model
 {
     public:
         /*  Functions   */
+        Model()
+        {
+        }
         Model(string path)
         {
             this->loadModel(path);
         }
+        void loadModel(string path);
         void Draw(Shader shader);	
     private:
         /*  Model Data  */
@@ -37,7 +41,6 @@ class Model
         string directory;
         vector<Texture> textures_loaded;
         /*  Functions   */
-        void loadModel(string path);
         void processNode(aiNode* node, const aiScene* scene);
         Mesh processMesh(aiMesh* mesh, const aiScene* scene);
         GLint TextureFromFile(const char* path, string directory);
