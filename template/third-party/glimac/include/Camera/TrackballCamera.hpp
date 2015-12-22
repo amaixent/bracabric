@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <SDL/SDL.h>
 #include "glimac/glm.hpp"
+#pragma once
 
 namespace glimac {
 
