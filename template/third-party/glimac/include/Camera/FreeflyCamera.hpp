@@ -23,5 +23,7 @@ public:
 
 	void rotateLeft(float degrees);
 	void rotateUp(float degrees);
+	void moveLeft(float t);
+	void moveFront(float t);
 	mat4 getViewMatrix() const;
 };

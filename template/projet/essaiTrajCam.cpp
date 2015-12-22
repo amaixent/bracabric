@@ -58,7 +58,7 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
 
-
+ 
 
     // Application loop:
     bool done = false;
@@ -78,8 +78,13 @@ int main(int argc, char** argv) {
                 freefly.rotateLeft(-2*mousePosX);
                 freefly.rotateUp(-2*mousePosY);
             }
+
+                if (windowManager.isKeyPressed(SDLK_z)) freefly.moveFront(0.1);
+                if (windowManager.isKeyPressed(SDLK_s)) freefly.moveFront(-0.1);
+                if (windowManager.isKeyPressed(SDLK_q)) freefly.moveLeft(-0.1);
+                if (windowManager.isKeyPressed(SDLK_d)) freefly.moveLeft(0.1);
                 
-                if (windowManager.isKeyPressed(SDLK_i)) freefly.rotateUp(0.5);
+                if (windowManager.isKeyPressed(SDLK_i)) freefly.rotateUp(0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
                 if (windowManager.isKeyPressed(SDLK_k)) freefly.rotateUp(-0.5);
                 if (windowManager.isKeyPressed(SDLK_j)) freefly.rotateLeft(0.5);
                 if (windowManager.isKeyPressed(SDLK_l)) freefly.rotateLeft(-0.5);

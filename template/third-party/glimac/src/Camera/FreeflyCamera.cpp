@@ -31,7 +31,16 @@
 		m_fTheta = m_fTheta + radian;
 		computeDirectionVectors();		
 	}
+	void FreeflyCamera::moveLeft(float t){
+		m_Position += t * m_LeftVector;
+		computeDirectionVectors();
+	}
 
+	void FreeflyCamera::moveFront(float t){
+		m_Position += t * m_FrontVector;
+		computeDirectionVectors();
+	}
+	
 	mat4 FreeflyCamera::getViewMatrix() const {
 		mat4 VMatrix = lookAt(m_Position, m_FrontVector + m_Position, m_UpVector);
 		return VMatrix;
