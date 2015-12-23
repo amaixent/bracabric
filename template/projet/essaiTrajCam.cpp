@@ -87,7 +87,7 @@ int main(int argc, char** argv) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
        
-        maScene.Draw(trajcam,freefly,screenWidth,screenHeight);
+        maScene.Draw(trajectoire,freefly,screenWidth,screenHeight);
 
 
 
