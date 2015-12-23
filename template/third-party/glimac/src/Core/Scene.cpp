@@ -32,13 +32,13 @@ List Scene::LoadObjectFromFile(string fichierObjet, List ListObjet){
 	//bisou ALICE!!
 }
 
-void Scene::Draw(TrajectoireCamera trajcam, GLuint screenWidth, GLuint screenHeight){
+void Scene::Draw(Trajectoire trajcam, FreeflyCamera camera, GLuint screenWidth, GLuint screenHeight){
 
 	shader.Use();   // <-- Don't forget this one!
         
     // Transformation matrices
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);/*aiMemoryInfo::cameras.Zoom*/
-    glm::mat4 view = trajcam.getViewMatrix();//aiMemoryInfo::cameras.GetViewMatrix();
+    glm::mat4 view = camera.getViewMatrix();//aiMemoryInfo::cameras.GetViewMatrix();
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 

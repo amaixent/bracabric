@@ -45,7 +45,8 @@ int main(int argc, char** argv) {
 
     // Initialisaton TrajCam
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
-    TrajectoireCamera trajcam(1, positions);
+    Trajectoire trajcam(1, positions);
+    FreeflyCamera camera;
 
     // Application loop:
     bool done = false;
@@ -62,15 +63,15 @@ int main(int argc, char** argv) {
                 float mousePosX = mousePos.x/800.0f - 0.5;
                 float mousePosY = mousePos.y/600.0f - 0.5;
 
-                trajcam.rotateLeft(-2*mousePosX);
-                trajcam.rotateUp(-2*mousePosY);
+                camera.rotateLeft(-2*mousePosX);
+                camera.rotateUp(-2*mousePosY);
             }
                 
 
-                if (windowManager.isKeyPressed(SDLK_i)) trajcam.rotateUp(0.5);
-                if (windowManager.isKeyPressed(SDLK_k)) trajcam.rotateUp(-0.5);
-                if (windowManager.isKeyPressed(SDLK_j)) trajcam.rotateLeft(0.5);
-                if (windowManager.isKeyPressed(SDLK_l)) trajcam.rotateLeft(-0.5);
+                if (windowManager.isKeyPressed(SDLK_i)) camera.rotateUp(0.5);
+                if (windowManager.isKeyPressed(SDLK_k)) camera.rotateUp(-0.5);
+                if (windowManager.isKeyPressed(SDLK_j)) camera.rotateLeft(0.5);
+                if (windowManager.isKeyPressed(SDLK_l)) camera.rotateLeft(-0.5);
         }
 
         /*********************************
@@ -83,7 +84,7 @@ int main(int argc, char** argv) {
         glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        maScene.Draw(trajcam,screenWidth,screenHeight);
+        maScene.Draw(trajcam,camera,screenWidth,screenHeight);
 
 
 
