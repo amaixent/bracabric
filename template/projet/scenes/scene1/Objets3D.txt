@@ -1,0 +1,5 @@
+# Attention à ne pas laisser une ligne vide, toujours mettre un #
+# id chemin/objet.obj px py pz sx sy sz rx ry rz
+#
+# sphericalMaze
+0 assets/models/scene1/Spherical_Maze/Spherical_Maze.mtl 0.0 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0

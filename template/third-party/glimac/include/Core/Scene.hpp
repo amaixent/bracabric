@@ -11,7 +11,7 @@ class Scene
 {
 private:
 	int id;
-	// int nbObjet; //la variable n'est plus utile si on utilise une lisre
+	// int nbObjet; //la variable n'est plus utile si on utilise une liste
 	Shader shader;
 	List ListObjet; //pardon...mais j'en pouvais plus du tableau c'est plus simple une liste dans ce cas.
 	int idTrajectoire;

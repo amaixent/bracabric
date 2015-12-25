@@ -2,12 +2,12 @@
 
 
 namespace glimac {
-	Scene::Scene(string fichierVs,string fichierFs,string fichierObjet){
-		shader.loadShader(fichierVs,fichierFs);
+	Scene::Scene(string fichierVs, string fichierFs, string fichierObjet){
+		shader.loadShader(fichierVs, fichierFs);
 		ListObjet = NULL;
-		ListObjet = Load2ObjetsTmp(ListObjet);
+		//ListObjet = Load2ObjetsTmp(ListObjet);
 
-		// LoadObjectFromFile(fichierObjet,ListObjet);
+		ListObjet = LoadObjectFromFile(fichierObjet, ListObjet);
 		id = 0;
 		idTrajectoire = 0;
 	}
@@ -22,14 +22,57 @@ List Scene::Load2ObjetsTmp(List ListObjet){
 	ListObjet=insertHead(ListObjet, nanosuit); //insert le noeud dans la liste.
 	Objet3D maison("assets/models/scene3/house/fw43_lowpoly_n1.3ds");
 	ListObjet= insertHead(ListObjet, maison);
-	
 
 	return ListObjet;	
-
 }
+
+/*
+Lecture du fichier texte directement ligne par ligne
+"contenu" comporte chaque caractère de la ligne lue à chaque tour de boucle
+remplir la liste de paramètres "objet" avec les éléments qui sont dans "contenu"
+instancier les objets 3D à l'aide de ces paramètres après les avoir convertis dans le bon format
+*/
 	
 List Scene::LoadObjectFromFile(string fichierObjet, List ListObjet){
-	//bisou ALICE!!
+	ifstream fichier(fichierObjet);
+    //int NB_PARAMS_OBJET = 11;
+    string contenu, temp, caractere, path;
+    vec3 po, sc, ro;
+    int id;
+    float convertedToFloat[11];
+    if(fichier)
+    {
+    	while(getline(fichier, contenu)){
+    		caractere = contenu[0];
+    		if(caractere != "#"){
+			    
+			    stringstream ss(contenu);
+			    vector<string> objet;
+			    while (ss >> temp)
+			        objet.push_back(temp);
+
+			    //Conversion dans le bon format (int pour l'id, float pour le reste)
+				stringstream convert0(objet[0]);
+				convert0 >> id;
+				for(int i = 2; i < 10; i++){
+					stringstream convert(objet[i]);
+					convert >> convertedToFloat[i];
+				}
+			    path = objet[1];
+				po = vec3(convertedToFloat[2], convertedToFloat[3], convertedToFloat[4]);
+				sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
+				ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
+
+			    Objet3D newObjet(id, path, po, sc, ro);
+				ListObjet = insertHead(ListObjet, newObjet);
+    		}
+    	}
+        fichier.close();
+    }
+    else
+        cerr << "Impossible d'ouvrir le fichier : " << fichierObjet << endl;
+    
+	return ListObjet;
 }
 
 void Scene::Draw(Trajectoire trajcam, FreeflyCamera camera, GLuint screenWidth, GLuint screenHeight){

@@ -11,4 +11,4 @@ foreach(SRC_FILE ${SRC_FILES})
 endforeach()
 
 file(COPY shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-
+file(COPY scenes DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
