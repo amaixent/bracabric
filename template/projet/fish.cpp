@@ -69,8 +69,11 @@ int main(int argc, char** argv) {
                 trackCam.rotateUp(2*mousePosY);
             }
 
-                if (windowManager.isKeyPressed(SDLK_z)) trackCam.moveFront(0.1);
-                if (windowManager.isKeyPressed(SDLK_s)) trackCam.moveFront(-0.1);
+                if (windowManager.isKeyPressed(SDLK_z)) trackCam.moveFront(-0.1);
+                 if (windowManager.isKeyPressed(SDLK_s)) {
+                    trackCam.moveFront(0.1);
+                    if(trackCam.getm_fDistance() == 0.0) std::cout<<"Pour un point de vue plus large, aller dans TrackballCamera.cpp et suivre les indics :)"<<std::endl;
+                }
                 //if (windowManager.isKeyPressed(SDLK_q)) trackCam.moveLeft(-0.1);
                 //if (windowManager.isKeyPressed(SDLK_d)) trackCam.moveLeft(0.1);
                 
