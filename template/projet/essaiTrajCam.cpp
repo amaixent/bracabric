@@ -39,11 +39,13 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
     //Initialisation de la scene
-    Scene maScene("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","Le chemin du fichier pour loader les objets");
+    Scene maScene("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Objets3D.txt");
+    
     //Initialisation Trajectoire et Camera
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
     Trajectoire trajectoire(1, positions);
     FreeflyCamera freefly;
+    TrackballCamera trackCam;
  
 
     // Application loop:
@@ -61,19 +63,19 @@ int main(int argc, char** argv) {
                 float mousePosX = mousePos.x/800.0f - 0.5;
                 float mousePosY = mousePos.y/600.0f - 0.5;
 
-                freefly.rotateLeft(-2*mousePosX);
-                freefly.rotateUp(-2*mousePosY);
+                trackCam.rotateLeft(2*mousePosX);
+                trackCam.rotateUp(2*mousePosY);
             }
 
-                if (windowManager.isKeyPressed(SDLK_z)) freefly.moveFront(0.1);
-                if (windowManager.isKeyPressed(SDLK_s)) freefly.moveFront(-0.1);
-                if (windowManager.isKeyPressed(SDLK_q)) freefly.moveLeft(-0.1);
-                if (windowManager.isKeyPressed(SDLK_d)) freefly.moveLeft(0.1);
+                if (windowManager.isKeyPressed(SDLK_z)) trackCam.moveFront(0.1);
+                if (windowManager.isKeyPressed(SDLK_s)) trackCam.moveFront(-0.1);
+               // if (windowManager.isKeyPressed(SDLK_q)) trackCam.moveLeft(-0.1);
+                //if (windowManager.isKeyPressed(SDLK_d)) trackCam.moveLeft(0.1);
                 
-                if (windowManager.isKeyPressed(SDLK_i)) freefly.rotateUp(0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
-                if (windowManager.isKeyPressed(SDLK_k)) freefly.rotateUp(-0.5);
-                if (windowManager.isKeyPressed(SDLK_j)) freefly.rotateLeft(0.5);
-                if (windowManager.isKeyPressed(SDLK_l)) freefly.rotateLeft(-0.5);
+                if (windowManager.isKeyPressed(SDLK_i)) trackCam.rotateUp(0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
+                if (windowManager.isKeyPressed(SDLK_k)) trackCam.rotateUp(-0.5);
+                if (windowManager.isKeyPressed(SDLK_j)) trackCam.rotateLeft(-0.5);
+                if (windowManager.isKeyPressed(SDLK_l)) trackCam.rotateLeft(0.5);
         }
 
         /*********************************
@@ -87,7 +89,7 @@ int main(int argc, char** argv) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
        
-        maScene.Draw(trajectoire,freefly,screenWidth,screenHeight);
+        maScene.Draw(trajectoire,trackCam,screenWidth,screenHeight);
 
 
 

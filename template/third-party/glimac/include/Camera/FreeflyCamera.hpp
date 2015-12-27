@@ -26,4 +26,7 @@ public:
 	void moveLeft(float t);
 	void moveFront(float t);
 	mat4 getViewMatrix() const;
+
+	void limiteLeft();
+	//void limiteUp();
 };

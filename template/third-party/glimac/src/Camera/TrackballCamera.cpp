@@ -19,7 +19,16 @@ namespace glimac {
 
     void TrackballCamera::rotateLeft(float degrees) {
         m_fAngleX += degrees / 180 * M_PI;
-    }
+        std::cout<<"m_fAngleX : "<< m_fAngleX <<std::endl;
+        if (m_fAngleX > 1.20)
+
+            m_fAngleX = 1.20;
+
+        else if (m_fAngleX < -1.25)
+
+             m_fAngleX = -1.25;
+
+    } 
 
     void TrackballCamera::rotateUp(float degrees){
         m_fAngleY += degrees / 180 * M_PI;

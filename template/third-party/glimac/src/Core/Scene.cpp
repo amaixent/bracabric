@@ -75,7 +75,7 @@ List Scene::LoadObjectFromFile(string fichierObjet, List ListObjet){
 	return ListObjet;
 }
 
-void Scene::Draw(Trajectoire trajcam, FreeflyCamera camera, GLuint screenWidth, GLuint screenHeight){
+void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
 
 	shader.Use();   // <-- Don't forget this one!
         

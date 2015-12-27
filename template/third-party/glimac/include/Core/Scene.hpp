@@ -4,6 +4,7 @@
 #include "Liste/liste_Objet3D.hpp"
 #include <Core/Trajectoire.hpp>
 #include <Camera/FreeflyCamera.hpp>
+#include <Camera/TrackballCamera.hpp>
 
 namespace glimac {
 
@@ -23,7 +24,7 @@ public:
 
 	List Load2ObjetsTmp(List ListObjet);
 	List LoadObjectFromFile(string fichierObjet, List ListObjet); //On peut s'aider de la fonction Load2objettmp() pour utiliser les listes pour charger les objets.
-	void Draw(Trajectoire trajcam, FreeflyCamera camera, GLuint screenWidth, GLuint screenHeight);
+	void Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
 
 	/* data */
 };
