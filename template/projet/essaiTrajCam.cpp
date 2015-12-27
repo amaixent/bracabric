@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
     //Initialisation Trajectoire et Camera
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
     Trajectoire trajectoire(1, positions);
-    FreeflyCamera freefly;
+   // FreeflyCamera freefly;
     TrackballCamera trackCam;
  
 
@@ -72,8 +72,8 @@ int main(int argc, char** argv) {
                // if (windowManager.isKeyPressed(SDLK_q)) trackCam.moveLeft(-0.1);
                 //if (windowManager.isKeyPressed(SDLK_d)) trackCam.moveLeft(0.1);
                 
-                if (windowManager.isKeyPressed(SDLK_i)) trackCam.rotateUp(0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
-                if (windowManager.isKeyPressed(SDLK_k)) trackCam.rotateUp(-0.5);
+                if (windowManager.isKeyPressed(SDLK_i)) trackCam.rotateUp(-0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
+                if (windowManager.isKeyPressed(SDLK_k)) trackCam.rotateUp(0.5);
                 if (windowManager.isKeyPressed(SDLK_j)) trackCam.rotateLeft(-0.5);
                 if (windowManager.isKeyPressed(SDLK_l)) trackCam.rotateLeft(0.5);
         }

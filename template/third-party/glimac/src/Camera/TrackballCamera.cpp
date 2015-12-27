@@ -19,7 +19,7 @@ namespace glimac {
 
     void TrackballCamera::rotateLeft(float degrees) {
         m_fAngleX += degrees / 180 * M_PI;
-        std::cout<<"m_fAngleX : "<< m_fAngleX <<std::endl;
+        
         if (m_fAngleX > 1.20)
 
             m_fAngleX = 1.20;
@@ -32,6 +32,14 @@ namespace glimac {
 
     void TrackballCamera::rotateUp(float degrees){
         m_fAngleY += degrees / 180 * M_PI;
+    
+          if (m_fAngleY > 0.95)
+
+            m_fAngleY = 0.95;
+
+        else if (m_fAngleY < -1.11)
+
+             m_fAngleY = -1.11;
     }
 
     glm::mat4 TrackballCamera::getViewMatrix() const{
