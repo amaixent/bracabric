@@ -20,7 +20,7 @@ List Scene::Load2ObjetsTmp(List ListObjet){
 
 	Objet3D nanosuit("assets/models/scene3/nanosuit/nanosuit.obj"); //Charge l'objet
 	ListObjet=insertHead(ListObjet, nanosuit); //insert le noeud dans la liste.
-	Objet3D maison("assets/models/scene3/house/fw43_lowpoly_n1.3ds");
+	Objet3D maison("assets/3d-model.3ds/Gumball/Model.c4d");
 	ListObjet= insertHead(ListObjet, maison);
 
 	return ListObjet;	
