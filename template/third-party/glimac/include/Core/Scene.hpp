@@ -5,6 +5,7 @@
 #include <Core/Trajectoire.hpp>
 #include <Camera/FreeflyCamera.hpp>
 #include <Camera/TrackballCamera.hpp>
+#include "glimac/glm.hpp"
 
 namespace glimac {
 
@@ -12,9 +13,8 @@ class Scene
 {
 private:
 	int id;
-	// int nbObjet; //la variable n'est plus utile si on utilise une liste
 	Shader shader;
-	List ListObjet; //pardon...mais j'en pouvais plus du tableau c'est plus simple une liste dans ce cas.
+	List ListObjet; 
 	int idTrajectoire;
 	
 public:
@@ -23,7 +23,7 @@ public:
 	~Scene();
 
 	List Load2ObjetsTmp(List ListObjet);
-	List LoadObjectFromFile(string fichierObjet, List ListObjet); //On peut s'aider de la fonction Load2objettmp() pour utiliser les listes pour charger les objets.
+	List LoadObjectFromFile(string fichierObjet, List ListObjet);
 	void Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
 
 	/* data */

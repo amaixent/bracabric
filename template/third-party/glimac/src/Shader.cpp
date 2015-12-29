@@ -3,9 +3,7 @@
 using namespace std;
 
 Shader::Shader(){
-    //on charge un shader considérer comme le shader de base.
-    // Shader ourShader("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl");
-
+   
 }
 
 void Shader::loadShader(string vertexPath, string fragmentPath){

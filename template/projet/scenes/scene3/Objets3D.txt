@@ -5,4 +5,4 @@
 0 assets/models/scene3/nanosuit/nanosuit.obj 0.0 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0
 #
 # Gauffre
-1 assets/D/WaffleN160715.3DS 0.0 -1.75 -3.0 0.02 0.02 0.02 0.0 0.0 0.0
+1 assets/models/scene3/waffle/WaffleN160715.3DS 0.0 -1.75 -3.0 0.02 0.02 0.02 0.0 0.0 0.0

@@ -4,6 +4,7 @@
 
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
+#include <assimp/version.h>
 
 #include "Core/Scene.hpp"
 
@@ -25,6 +26,7 @@ int main(int argc, char** argv) {
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
+    cout <<"Assimp version : " <<aiGetVersionMajor() << endl;
 
 
     //Define the viewport dimensions

@@ -84,7 +84,17 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
     glm::mat4 view = camera.getViewMatrix();//aiMemoryInfo::cameras.GetViewMatrix();
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-
+    
+    //Blin Phong;
+    glUniform1f(glGetUniformLocation(shader.Program , "uShininess"),2.0);
+    glUniform3f(glGetUniformLocation(shader.Program , "uKd"), 1.0,1.0,1.0);
+    glUniform3f(glGetUniformLocation(shader.Program , "uKs"), 1.0,1.0,1.0);
+    vec4 temp =  view*vec4(1.0,1.0,1.0,0.0);
+    glUniform3f(glGetUniformLocation(shader.Program , "uLightDir_vs"),temp[0],temp[1],temp[2]);
+    vec4 temp2 = view*vec4(1.0,1.0,1.0,1.0);
+    glUniform3f(glGetUniformLocation(shader.Program , "uLightPos_vs"),temp2[0],temp2[1],temp2[2]);
+    glUniform3f(glGetUniformLocation(shader.Program , "uLightIntensity"), 1.5,1.5,1.5);
+    
     //Draw the loaded model
    	List ListeParcourue = ListObjet;
    	Objet3D objet_tmp;

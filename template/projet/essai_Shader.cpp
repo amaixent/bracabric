@@ -26,29 +26,26 @@ int main(int argc, char** argv) {
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
- 
+
     //Define the viewport dimensions
     glViewport(0, 0, screenWidth, screenHeight);
 
     // Setup some OpenGL options
     glEnable(GL_DEPTH_TEST);
 
-
+    
 
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
-
-
-    //On Initialise la scene
-    Scene maScene("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Objets3D.txt");
-
-    // Initialisaton TrajCam
+    //Initialisation de la scene
+    Scene maScene("projet/shaders/lampe_torche.vs.glsl", "projet/shaders/lampe_torche.fs.glsl","projet/scenes/scene3/Objets3D.txt");
+    //Initialisation Trajectoire et Camera
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
-    Trajectoire trajcam(1, positions);
-    //FreeflyCamera camera;
+    Trajectoire trajectoire(1, positions);
+    //FreeflyCamera freefly;
     TrackballCamera trackCam;
-
+ 
 
     // Application loop:
     bool done = false;
@@ -70,7 +67,7 @@ int main(int argc, char** argv) {
             }
 
                 if (windowManager.isKeyPressed(SDLK_z)) trackCam.moveFront(-0.1);
-                 if (windowManager.isKeyPressed(SDLK_s)) {
+                if (windowManager.isKeyPressed(SDLK_s)) {
                     trackCam.moveFront(0.1);
                     if(trackCam.getm_fDistance() == 0.0) std::cout<<"Pour un point de vue plus large, aller dans TrackballCamera.cpp et suivre les indics :)"<<std::endl;
                 }
@@ -90,10 +87,11 @@ int main(int argc, char** argv) {
         //On nettoit la fenêtre
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
+      //  glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        maScene.Draw(trajcam,trackCam,screenWidth,screenHeight);
+       
+        maScene.Draw(trajectoire,trackCam,screenWidth,screenHeight);
 
 
 
