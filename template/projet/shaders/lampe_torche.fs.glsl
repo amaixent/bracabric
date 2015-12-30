@@ -37,8 +37,6 @@ uniform sampler2D texture_diffuse1;
 void main() {
 
 	color = vec4(texture(texture_diffuse1, TexCoords_vs))*vec4(blinnPhong(),1)*aura();
-	//color=aura();
-	//fFragColor=blinnPhong()*TexCoords;
-	//fFragColor= Normal_vs;
-	//fFragColor = vec3 (1.0,1.0,1.0);
+	//color=vec4(texture(texture_diffuse1, TexCoords_vs))*vec4(blinnPhong(),1);
+
 }

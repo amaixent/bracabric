@@ -4,7 +4,6 @@
 
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
-#include <assimp/version.h>
 
 #include "Core/Scene.hpp"
 
@@ -26,7 +25,6 @@ int main(int argc, char** argv) {
 
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
-    cout <<"Assimp version : " <<aiGetVersionMajor() << endl;
 
 
     //Define the viewport dimensions
@@ -41,7 +39,7 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
     //Initialisation de la scene
-    Scene maScene("projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Objets3D.txt");
+    Scene maScene("projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene2/Tas.txt");
     //Initialisation Trajectoire et Camera
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
     Trajectoire trajectoire(1, positions);
@@ -89,7 +87,7 @@ int main(int argc, char** argv) {
         //On nettoit la fenêtre
         glClear(GL_COLOR_BUFFER_BIT);
 
-         glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
+      //  glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
        

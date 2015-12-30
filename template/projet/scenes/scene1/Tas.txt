@@ -1,0 +1,8 @@
+# Attention à ne pas laisser une ligne vide, toujours mettre un #
+# id chemin/FichierObjet.txt px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+#
+# Attention à bien choisir des identifiants différents compris entre 0 et 5
+# 
+#
+# Tas1
+0 projet/scenes/scene1/Spherical_Maze.txt 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0

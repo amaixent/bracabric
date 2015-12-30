@@ -1,0 +1,6 @@
+# Attention à ne pas laisser une ligne vide, toujours mettre un #
+# id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+#
+#
+# Sea Horse
+0 assets/models/scene2/seahorse/SeahorseN010313.3DS  0.0 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 0.0

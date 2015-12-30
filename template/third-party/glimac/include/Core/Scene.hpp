@@ -1,5 +1,6 @@
 #pragma once
-#include "Core/Objet3D.hpp"
+//#include "Core/Objet3D.hpp"
+#include "Core/Tas.hpp"
 #include "Shader.hpp"
 #include "Liste/liste_Objet3D.hpp"
 #include <Core/Trajectoire.hpp>
@@ -14,16 +15,17 @@ class Scene
 private:
 	int id;
 	Shader shader;
-	List ListObjet; 
+	//List ListObjet;
+	Tas tabTas[6]; 
 	int idTrajectoire;
 	
 public:
 
-	Scene(string fichierVs,string fichierFs,string fichierObjet);
+	Scene(string fichierVs,string fichierFs,string fichierTas);
 	~Scene();
 
-	List Load2ObjetsTmp(List ListObjet);
-	List LoadObjectFromFile(string fichierObjet, List ListObjet);
+	//List LoadObjectFromFile(string fichierObjet, List ListObjet);
+	void LoadTasFromFile(string fichierTas);
 	void Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
 
 	/* data */
