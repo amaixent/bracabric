@@ -2,7 +2,22 @@
 # id chemin/FichierObjet.txt px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
 #
 # Attention à bien choisir des identifiants différents compris entre 0 et 5
-# 
+#0.0 -1.75 -3.0
 #
-# Tas1
-0 projet/scenes/scene1/Spherical_Maze.txt 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+# Tas0 : d12
+0 projet/scenes/scene1/d12.txt -1.0 -1.75 -3.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#
+# Tas1 : tetraedre
+1 projet/scenes/scene1/tetraedre.txt 3.0 -1.75 -6.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#
+# Tas2 : cube
+2 projet/scenes/scene1/cube.txt 0.0 -1.75 -9.0 1.0 1.0 1.0 0.0 0.0 0.0 0.0
+#
+# Tas3 : cone
+3 projet/scenes/scene1/cone.txt -3.0 -1.75 -12.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#
+# Tas4 : quad
+4 projet/scenes/scene1/quad.txt 3.0 -1.75 -15.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#
+# Tas5 : Spherical_Maze
+5 projet/scenes/scene1/Spherical_Maze.txt -3.0 1.75 -18.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0

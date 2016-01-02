@@ -2,5 +2,50 @@
 # id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
 #
 #
-# sphericalMaze
-0 assets/models/scene1/Spherical_Maze/Spherical_Maze.obj  0.0 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 0.0
+# rang 1
+0 assets/models/scene1/Spherical_Maze.obj  0.0 0.0 0.0 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 2
+1 assets/models/scene1/Spherical_Maze.obj  0.0 0.2 0.0 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 2
+2 assets/models/scene1/Spherical_Maze.obj  0.17 0.2 0.17 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 2
+3 assets/models/scene1/Spherical_Maze.obj  0.17 0.2 -0.17 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 2
+4 assets/models/scene1/Spherical_Maze.obj  -0.17 0.2 0.17 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 2
+5 assets/models/scene1/Spherical_Maze.obj  -0.17 0.2 -0.17 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+6 assets/models/scene1/Spherical_Maze.obj  0.0 0.4 0.0 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+7 assets/models/scene1/Spherical_Maze.obj  0.25 0.4 0.25 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+8 assets/models/scene1/Spherical_Maze.obj  0.25 0.4 -0.25 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+9 assets/models/scene1/Spherical_Maze.obj  -0.25 0.4 0.25 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+10 assets/models/scene1/Spherical_Maze.obj  -0.25 0.4 -0.25 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+11 assets/models/scene1/Spherical_Maze.obj  0.0 0.6 0.0 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+12 assets/models/scene1/Spherical_Maze.obj  0.33 0.6 0.33 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+13 assets/models/scene1/Spherical_Maze.obj  0.33 0.6 -0.33 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+14 assets/models/scene1/Spherical_Maze.obj  -0.33 0.6 0.33 0.002 0.002 0.002 0.0 0.0 0.0 0.0
+#
+# rang 3
+15 assets/models/scene1/Spherical_Maze.obj  -0.33 0.6 -0.33 0.002 0.002 0.002 0.0 0.0 0.0 0.0
