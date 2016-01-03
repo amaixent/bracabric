@@ -4,3 +4,9 @@
 #
 # nanosuit
 0 assets/models/scene3/nanosuit/nanosuit.obj 0.0 -1.75 -3.0 0.2 0.2 0.2 1.0 0.0 0.0 0.0
+# 
+1 assets/models/scene3/nanosuit/nanosuit.obj 0.0 -1.75 -3.0 0.08 0.08 0.08 0.0 1.0 0.0 90.0
+# 
+2 assets/models/scene3/nanosuit/nanosuit.obj 0.05 -1.75 -3.0 0.08 0.08 0.08 0.0 1.0 0.0 -90.0
+#
+3 assets/models/scene3/nanosuit/nanosuit.obj 0.05 -1.7 -3.0 0.1 0.2 0.1 1.0 0.0 0.0 -90.0

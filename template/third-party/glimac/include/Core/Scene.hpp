@@ -21,7 +21,7 @@ private:
 	
 public:
 
-	Scene(string fichierVs,string fichierFs,string fichierTas);
+	Scene(int identifiant, string fichierVs,string fichierFs,string fichierTas);
 	~Scene();
 
 	//List LoadObjectFromFile(string fichierObjet, List ListObjet);

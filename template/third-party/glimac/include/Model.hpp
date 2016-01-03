@@ -18,6 +18,7 @@ using namespace std;
 
 #include <glimac/Image.hpp>
 #include <Mesh/Mesh.hpp>
+#include <string.h>
 
 
 

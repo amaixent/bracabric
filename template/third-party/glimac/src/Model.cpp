@@ -81,7 +81,7 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
 	}  
     // Process material
 	if(mesh->mMaterialIndex >= 0)
-	{
+    { 
 	    aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
 	    vector<Texture> diffuseMaps = this->loadMaterialTextures(material, 
 	                                        aiTextureType_DIFFUSE, "texture_diffuse");
@@ -97,6 +97,7 @@ Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
 GLint Model::TextureFromFile(const char* path, string directory)
 {
      //Generate texture ID and load texture data 
+
     string filename = string(path);
     filename = directory + '/' + filename;
     GLuint textureID;
@@ -123,33 +124,50 @@ vector<Texture> Model::loadMaterialTextures(aiMaterial* mat, aiTextureType type,
 {
     vector<Texture> textures;
     vector<Texture> textures_loaded;
-
-    for(GLuint i = 0; i < mat->GetTextureCount(type); i++)
+   
+    if (strncmp (&directory[19],"2",1) == 0)
     {
-        aiString str;
-        mat->GetTexture(type, i, &str);
-        GLboolean skip = false;
+      
+        Texture texture;
 
-        for(GLuint j = 0; j < textures_loaded.size(); j++)
-        {
-            if(textures_loaded[j].path == str)
+        texture.id = TextureFromFile("texture.jpg" , this->directory);
+        texture.type = typeName;
+        texture.path = directory + "texture.jpg";
+        textures.push_back(texture);
+
+        this->textures_loaded.push_back(texture); 
+
+    }
+    else{
+        for(GLuint i = 0; i < mat->GetTextureCount(type); i++)
+        {   
+            aiString str;
+            mat->GetTexture(type, i, &str);
+            GLboolean skip = false;
+
+            for(GLuint j = 0; j < textures_loaded.size(); j++)
             {
-                textures.push_back(textures_loaded[j]);
-                skip = true; 
-                break;
+                if(textures_loaded[j].path == str)
+                {
+                    textures.push_back(textures_loaded[j]);
+                    skip = true; 
+                    break;
+                }
+            }
+
+            if(!skip)
+            {   // Performance improvement : If texture hasn't been loaded already, load it
+                Texture texture;
+
+                texture.id = TextureFromFile(str.C_Str(), this->directory);
+                texture.type = typeName;
+                texture.path = str;
+                textures.push_back(texture);
+
+                this->textures_loaded.push_back(texture);  // Add to loaded textures
             }
         }
-        if(!skip)
-        {   // Performance improvement : If texture hasn't been loaded already, load it
-            Texture texture;
 
-            texture.id = TextureFromFile(str.C_Str(), this->directory);
-            texture.type = typeName;
-            texture.path = str;
-            textures.push_back(texture);
-
-            this->textures_loaded.push_back(texture);  // Add to loaded textures
-        }
     }
     return textures;
 }

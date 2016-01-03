@@ -4,7 +4,17 @@
 # Attention à bien choisir des identifiants différents compris entre 0 et 5
 # Attention même si le tas ne subit pas de rotation, il faut lui mettre un axe de rotation
 #
-# Tas1
-0 projet/scenes/scene3/nanosuit.txt 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
-# Tas2
-1 projet/scenes/scene3/waffle.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 1.0 0.0 45.0
+# nanosuit
+0 projet/scenes/scene3/nanosuit.txt 0.0 -1.0 0.0 1.0 1.0 1.0 0.0 1.0 0.0 45.0
+#
+#1 projet/scenes/scene3/nanosuit.txt 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+# house
+#1 projet/scenes/scene3/house.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 1.0 0.0 0.0
+# waffle
+#2 projet/scenes/scene3/waffle.txt 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+# globe
+#3 projet/scenes/scene3/globe.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 1.0 0.0 0.0
+# camel
+#4 projet/scenes/scene3/camel.txt 0.0 0.0 0.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+# bird
+#5 projet/scenes/scene3/bird.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 1.0 0.0 0.0

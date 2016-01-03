@@ -2,10 +2,10 @@
 
 
 namespace glimac {
-	Scene::Scene(string fichierVs, string fichierFs, string fichierTas){
+	Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas){
 		shader.loadShader(fichierVs, fichierFs);
         LoadTasFromFile(fichierTas);
-		id = 0;
+		id = identifiant;
 		idTrajectoire = 0;
 	}
 
