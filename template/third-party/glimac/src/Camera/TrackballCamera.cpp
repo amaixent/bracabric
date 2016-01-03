@@ -31,18 +31,18 @@ namespace glimac {
     void TrackballCamera::rotateLeft(float degrees) {
         m_fAngleX += degrees / 180 * M_PI;
         
-        if (m_fAngleX > 1.20)
+        // if (m_fAngleX > 1.20)
 
-            m_fAngleX = 1.20;
+        //     m_fAngleX = 1.20;
 
-        else if (m_fAngleX < -1.25)
+        // else if (m_fAngleX < -1.25)
 
-             m_fAngleX = -1.25;
+        //      m_fAngleX = -1.25;
 
     } 
 
     void TrackballCamera::rotateUp(float degrees){
-        m_fAngleY += degrees / 180 * M_PI;
+         m_fAngleY += degrees / 180 * M_PI;
     
         //   if (m_fAngleY > 0.95)
 
