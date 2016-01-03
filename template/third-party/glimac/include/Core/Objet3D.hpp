@@ -23,6 +23,7 @@ public:
 	Objet3D(int identifiant,Model mod,string path,vec3 p,vec3 s,vec3 axeR, float angleR);
 	Objet3D(string path);
 	Objet3D(int identifiant, string path,vec3 p,vec3 s, vec3 axeR, float angleR);
+	Objet3D(int identifiant,vec3 p, vec3 s, vec3 axeR, float angleR);
 	Objet3D(const Objet3D &o);
 	~Objet3D();
 

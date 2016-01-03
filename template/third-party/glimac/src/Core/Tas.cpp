@@ -2,9 +2,8 @@
 
 using namespace glimac;
 
-	Tas::Tas(int identifiant,List ListO,vec3 p,vec3 s,vec3 axeR,float angleR){
+	Tas::Tas(int identifiant,vec3 p,vec3 s,vec3 axeR,float angleR){
 		id = identifiant;
-		ListObjet = ListO;
 		position = p;
 		scaleTas = s;
 		axeRotation = axeR;
@@ -13,8 +12,7 @@ using namespace glimac;
 
 	Tas::Tas(int identifiant,string fichierObjet,vec3 p,vec3 s,vec3 axeR,float angleR){
 		id = identifiant;
-		ListObjet = NULL;
-		ListObjet = LoadObjectFromFile(fichierObjet,ListObjet);
+		LoadObjectFromFile(fichierObjet);
 		position = p;
 		scaleTas = s;
 		axeRotation = axeR;
@@ -22,11 +20,10 @@ using namespace glimac;
 	}
 
 	Tas::Tas(){
-		ListObjet = NULL;
 	}
 	
 	Tas::~Tas(){
-		//Libérer la mémoir pour les listes d'objets.
+		
 	}
 /*
 Lecture du fichier texte directement ligne par ligne
@@ -35,7 +32,7 @@ remplir la liste de paramètres "objet" avec les éléments qui sont dans "conte
 instancier les objets 3D à l'aide de ces paramètres après les avoir convertis dans le bon format
 */
 
-List Tas::LoadObjectFromFile(string fichierObjet, List ListObjet){
+void Tas::LoadObjectFromFile(string fichierObjet){
 	ifstream fichier(fichierObjet);
     //int NB_PARAMS_OBJET = 11;
     string contenu, temp, caractere, path;
@@ -65,52 +62,64 @@ List Tas::LoadObjectFromFile(string fichierObjet, List ListObjet){
 				sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
 				ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
 				angleRo = convertedToFloat[11];
-			    Objet3D newObjet(id, path, po, sc, ro, angleRo);
-				ListObjet = insertHead(ListObjet, newObjet);
-
+				if (listObjet.size() == 0)
+				{	
+					Objet3D newObjet(id,path, po, sc, ro, angleRo);
+    				objetBase = newObjet;
+				}
+			    Objet3D newObjet(id, po, sc, ro, angleRo);
+				listObjet.push_back(newObjet);
     		}
+    		
+    		
     	}
         fichier.close();
     }
     else
         cerr << "Impossible d'ouvrir le fichier : " << fichierObjet << endl;
-    
-	return ListObjet;
 }
 
-mat4 Tas::getModelMatrixTas(Objet3D obj){
+mat4 Tas::getModelMatrix(){
 		mat4 modelMatrix  = mat4(1.0f);
         modelMatrix = translate(modelMatrix, position);
-        modelMatrix = translate(modelMatrix, obj.getposition()); 
+        modelMatrix = translate(modelMatrix, objetBase.getposition()); 
         
         modelMatrix = scale(modelMatrix, scaleTas);
-        modelMatrix = scale(modelMatrix, obj.getscaleObject());
+        modelMatrix = scale(modelMatrix, objetBase.getscaleObject());
 
         if(axeRotation!=vec3(0,0,0))
         modelMatrix = rotate(modelMatrix, radians(angleRotation), axeRotation);
-        if(obj.getaxeRotation()!=vec3(0,0,0))
-        modelMatrix = rotate(modelMatrix, radians(obj.getangleRotation()), obj.getaxeRotation());
+        if(objetBase.getaxeRotation()!=vec3(0,0,0))
+        modelMatrix = rotate(modelMatrix, radians(objetBase.getangleRotation()), objetBase.getaxeRotation());
 
         return modelMatrix;
 }
 
-List Tas::getListObjet(){
-	return ListObjet;
+int Tas::getlistObjetSize(){
+	return listObjet.size();
 }
 
 void Tas::Draw(Shader shader){
 	//Draw the loaded model
-   	List ListeParcourue = ListObjet;
-   	Objet3D objet_tmp;
+
    	glm::mat4 modelMatrix = glm::mat4(1.0f);
 
-   	//On parcourt la liste et on dessine chaque élément.
-    while(ListeParcourue){
-    	objet_tmp = ListeParcourue->value;//Ici value est un objet3D voir liste_Objet3D.c
-    	modelMatrix = getModelMatrixTas(ListeParcourue->value);
-        glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-        objet_tmp.Draw(shader);
+   	for (int i = 0; i < listObjet.size(); ++i)
+   	{
+   		objetBase.setPosition(listObjet[i].getposition());
+   		objetBase.setScale(listObjet[i].getscaleObject());
+   		objetBase.setRotation(listObjet[i].getaxeRotation(),listObjet[i].getangleRotation());
+   		modelMatrix = getModelMatrix();
+   		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
+        objetBase.Draw(shader);
+   	}
+    
+    // while(ListeParcourue){
+    // 	objet_tmp = ListeParcourue->value;//Ici value est un objet3D voir liste_Objet3D.c
+    // 	modelMatrix = getModelMatrixTas(ListeParcourue->value);
+    //     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
+    //     objet_tmp.Draw(shader);
 
-    	ListeParcourue=ListeParcourue->next;//Passage à l'élément suivant de la liste.
-    }
+    // 	ListeParcourue=ListeParcourue->next;//Passage à l'élément suivant de la liste.
+    // }
 }

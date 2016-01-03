@@ -2,19 +2,19 @@
 
 
 namespace glimac {
-	Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas){
-		shader.loadShader(fichierVs, fichierFs);
+    Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas){
+        shader.loadShader(fichierVs, fichierFs);
         LoadTasFromFile(fichierTas);
-		id = identifiant;
-		idTrajectoire = 0;
-	}
+        id = identifiant;
+        idTrajectoire = 0;
+    }
 
-	Scene::~Scene(){
-	}
+    Scene::~Scene(){
+    }
 
-	
+    
 void Scene::LoadTasFromFile(string fichierTas){
-	ifstream fichier(fichierTas);
+    ifstream fichier(fichierTas);
 
     string contenu, temp, caractere, path;
     vec3 po, sc, ro;
@@ -23,31 +23,31 @@ void Scene::LoadTasFromFile(string fichierTas){
     float convertedToFloat[12];
     if(fichier)
     {
-    	while(getline(fichier, contenu)){
-    		caractere = contenu[0];
-    		if(caractere != "#"){
-			    
-			    stringstream ss(contenu);
-			    vector<string> objet;
-			    while (ss >> temp)
-			        objet.push_back(temp);
+        while(getline(fichier, contenu)){
+            caractere = contenu[0];
+            if(caractere != "#"){
+                
+                stringstream ss(contenu);
+                vector<string> objet;
+                while (ss >> temp)
+                    objet.push_back(temp);
 
-			    //Conversion dans le bon format (int pour l'id, float pour le reste)
-				stringstream convert0(objet[0]);
-				convert0 >> id;
-				for(int i = 2; i < 12; i++){
-					stringstream convert(objet[i]);
-					convert >> convertedToFloat[i];
-				}
-			    path = objet[1];
-				po = vec3(convertedToFloat[2], convertedToFloat[3], convertedToFloat[4]);
-				sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
-				ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
+                //Conversion dans le bon format (int pour l'id, float pour le reste)
+                stringstream convert0(objet[0]);
+                convert0 >> id;
+                for(int i = 2; i < 12; i++){
+                    stringstream convert(objet[i]);
+                    convert >> convertedToFloat[i];
+                }
+                path = objet[1];
+                po = vec3(convertedToFloat[2], convertedToFloat[3], convertedToFloat[4]);
+                sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
+                ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
                 angleR = convertedToFloat[11];
-			    Tas newTas(id, path, po, sc, ro, angleR);
-				tabTas[id] = newTas;
-    		}
-    	}
+                Tas newTas(id, path, po, sc, ro, angleR);
+                tabTas[id] = newTas;
+            }
+        }
         fichier.close();
     }
     else
@@ -56,7 +56,7 @@ void Scene::LoadTasFromFile(string fichierTas){
 
 void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
 
-	shader.Use();   // <-- Don't forget this one!
+    shader.Use();   // <-- Don't forget this one!
         
     // Transformation matrices
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);/*aiMemoryInfo::cameras.Zoom*/
@@ -75,8 +75,8 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
     glUniform3f(glGetUniformLocation(shader.Program , "uLightIntensity"), 1.5,1.5,1.5);
     
     for (int i = 0; i < 6; ++i)
-    {
-        if(tabTas[i].getListObjet()!= NULL){
+    {   
+        if(tabTas[i].getlistObjetSize()!= 0){
            tabTas[i].Draw(shader); 
         }
         

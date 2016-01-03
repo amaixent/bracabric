@@ -32,6 +32,13 @@ namespace glimac {
 		axeRotation = axeR;
 		angleRotation=angleR;
 	}
+	Objet3D::Objet3D(int identifiant,vec3 p, vec3 s, vec3 axeR, float angleR){
+		id = identifiant;
+		position = p;
+		scaleObject = s;
+		axeRotation = axeR;
+		angleRotation=angleR;
+	}
 
 	Objet3D::Objet3D(const Objet3D &o){
 		id = o.id;
