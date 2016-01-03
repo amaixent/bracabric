@@ -19,5 +19,5 @@
 4 projet/scenes/scene2/goldfish.txt 0.0 0.0 -4.0 3.0 3.0 3.0 0.0 1.0 0.0 30.0
 #
 # Tas6 : liquid
-5 projet/scenes/scene2/liquid.txt -10.0 -2.0 -4.0 0.5 0.5 0.5 0.0 1.0 0.0 80.0
+5 projet/scenes/scene2/liquid.txt -10.0 -2.0 -60.0 0.9 0.9 0.9 0.0 1.0 0.0 85.0
 #
