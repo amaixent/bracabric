@@ -1,12 +1,22 @@
 # Attention à ne pas laisser une ligne vide, toujours mettre un #
-# id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz 
 #
 #
 # nanosuit
-0 assets/models/scene3/nanosuit/nanosuit.obj 0.0 -1.75 -3.0 0.2 0.2 0.2 1.0 0.0 0.0 0.0
+0 assets/models/scene3/nanosuit/nanosuit.obj 0.0 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 
 # 
-1 assets/models/scene3/nanosuit/nanosuit.obj 0.0 -1.75 -3.0 0.08 0.08 0.08 0.0 1.0 0.0 90.0
+1 assets/models/scene3/nanosuit/nanosuit.obj 1.2 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 
 # 
-2 assets/models/scene3/nanosuit/nanosuit.obj 0.05 -1.75 -3.0 0.08 0.08 0.08 0.0 1.0 0.0 -90.0
+2 assets/models/scene3/nanosuit/nanosuit.obj -1.2 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 
 #
-3 assets/models/scene3/nanosuit/nanosuit.obj 0.05 -1.7 -3.0 0.1 0.2 0.1 1.0 0.0 0.0 -90.0
+3 assets/models/scene3/nanosuit/nanosuit.obj 0.65 0.85 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 
+#
+4 assets/models/scene3/nanosuit/nanosuit.obj -0.65 0.85 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 
+#
+5 assets/models/scene3/nanosuit/nanosuit.obj -1.2 0.85 -3.0 0.2 0.2 0.2 0.0 0.0 30.0 
+#
+6 assets/models/scene3/nanosuit/nanosuit.obj 1.2 0.85 -3.0 0.2 0.2 0.2 0.0 0.0 -30.0 
+#
+7 assets/models/scene3/nanosuit/nanosuit.obj -3.1 1.4 -3.0 0.22 0.22 0.22 0.0 0.0 200.0 
+#
+8 assets/models/scene3/nanosuit/nanosuit.obj 3.1 1.4 -3.0 0.22 0.22 0.22 0.0 0.0 -200.0 

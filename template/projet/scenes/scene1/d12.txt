@@ -1,18 +1,19 @@
 # Attention à ne pas laisser une ligne vide, toujours mettre un #
-# id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz 
 # Entre 4 et 15 objets par tas !
 #
 # d12
-0 assets/models/scene1/d12.obj  -0.25 0.0 -0.25 0.2 0.2 0.2 0.0 0.0 0.0 0.0
+0 assets/models/scene1/d12.obj  -0.25 0.0 -0.25 0.2 0.2 0.2 0.0 0.0 0.0
 #
 # d12
-1 assets/models/scene1/d12.obj  0.25 0.0 -0.25 0.2 0.2 0.2 0.0 0.0 0.0 0.0
+1 assets/models/scene1/d12.obj  0.25 0.0 -0.25 0.2 0.2 0.2 0.0 0.0 0.0
 #
 # d12
-2 assets/models/scene1/d12.obj  -0.25 0.0 0.25 0.2 0.2 0.2 0.0 0.0 0.0 0.0
+2 assets/models/scene1/d12.obj  -0.25 0.0 0.25 0.2 0.2 0.2 0.0 0.0 0.0
 #
 # d12
-3 assets/models/scene1/d12.obj  0.25 0.0 0.25 0.2 0.2 0.2 0.0 0.0 0.0 0.0
+3 assets/models/scene1/d12.obj  0.25 0.0 0.25 0.2 0.2 0.2 0.0 0.0 0.0
 #
 # d12
-4 assets/models/scene1/d12.obj  0.0 0.35 0.0 0.25 0.25 0.25 0.0 6.0 7.0 20.0
+4 assets/models/scene1/d12.obj  0.0 0.35 0.0 0.25 0.25 0.25 0.0 20.0 20.0 
+#4 assets/models/scene1/d12.obj  0.0 0.35 0.0 0.25 0.25 0.25 0.0 6.0 7.0 20.0

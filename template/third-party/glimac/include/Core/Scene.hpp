@@ -1,8 +1,6 @@
 #pragma once
-//#include "Core/Objet3D.hpp"
 #include "Core/Tas.hpp"
 #include "Shader.hpp"
-#include "Liste/liste_Objet3D.hpp"
 #include <Core/Trajectoire.hpp>
 #include <Camera/FreeflyCamera.hpp>
 #include <Camera/TrackballCamera.hpp>

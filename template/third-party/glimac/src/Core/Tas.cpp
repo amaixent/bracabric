@@ -2,20 +2,18 @@
 
 using namespace glimac;
 
-	Tas::Tas(int identifiant,vec3 p,vec3 s,vec3 axeR,float angleR){
+	Tas::Tas(int identifiant,vec3 p,vec3 s,vec3 angleR){
 		id = identifiant;
 		position = p;
 		scaleTas = s;
-		axeRotation = axeR;
 		angleRotation = angleR;
 	}
 
-	Tas::Tas(int identifiant,string fichierObjet,vec3 p,vec3 s,vec3 axeR,float angleR){
+	Tas::Tas(int identifiant,string fichierObjet,vec3 p,vec3 s,vec3 angleR){
 		id = identifiant;
 		LoadObjectFromFile(fichierObjet);
 		position = p;
 		scaleTas = s;
-		axeRotation = axeR;
 		angleRotation = angleR;
 	}
 
@@ -38,8 +36,7 @@ void Tas::LoadObjectFromFile(string fichierObjet){
     string contenu, temp, caractere, path;
     vec3 po, sc, ro;
     int id;
-    float angleRo;
-    float convertedToFloat[12];
+    float convertedToFloat[11];
     if(fichier)
     {
     	while(getline(fichier, contenu)){
@@ -53,7 +50,7 @@ void Tas::LoadObjectFromFile(string fichierObjet){
 			    //Conversion dans le bon format (int pour l'id, float pour le reste)
 				stringstream convert0(objet[0]);
 				convert0 >> id;
-				for(int i = 2; i < 12; i++){
+				for(int i = 2; i < 11; i++){
 					stringstream convert(objet[i]);
 					convert >> convertedToFloat[i];
 				}
@@ -61,13 +58,12 @@ void Tas::LoadObjectFromFile(string fichierObjet){
 				po = vec3(convertedToFloat[2], convertedToFloat[3], convertedToFloat[4]);
 				sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
 				ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
-				angleRo = convertedToFloat[11];
 				if (listObjet.size() == 0)
 				{	
-					Objet3D newObjet(id,path, po, sc, ro, angleRo);
+					Objet3D newObjet(id,path, po, sc, ro);
     				objetBase = newObjet;
 				}
-			    Objet3D newObjet(id, po, sc, ro, angleRo);
+			    Objet3D newObjet(id, po, sc, ro);
 				listObjet.push_back(newObjet);
     		}
     		
@@ -87,10 +83,16 @@ mat4 Tas::getModelMatrix(){
         modelMatrix = scale(modelMatrix, scaleTas);
         modelMatrix = scale(modelMatrix, objetBase.getscaleObject());
 
-        if(axeRotation!=vec3(0,0,0))
-        modelMatrix = rotate(modelMatrix, radians(angleRotation), axeRotation);
-        if(objetBase.getaxeRotation()!=vec3(0,0,0))
-        modelMatrix = rotate(modelMatrix, radians(objetBase.getangleRotation()), objetBase.getaxeRotation());
+        //Rotation commune à tous les éléments du tas.
+        modelMatrix = rotate(modelMatrix, radians(angleRotation[0]), vec3(1,0,0));
+    	modelMatrix = rotate(modelMatrix, radians(angleRotation[1]), vec3(0,1,0));
+    	modelMatrix = rotate(modelMatrix, radians(angleRotation[2]), vec3(0,0,1));
+
+        //rotation propre à l'objet.
+        vec3 angle = objetBase.getangleRotation();
+        modelMatrix = rotate(modelMatrix, radians(angle[0]), vec3(1,0,0));
+        modelMatrix = rotate(modelMatrix, radians(angle[1]), vec3(0,1,0));
+        modelMatrix = rotate(modelMatrix, radians(angle[2]), vec3(0,0,1));
 
         return modelMatrix;
 }
@@ -108,7 +110,7 @@ void Tas::Draw(Shader shader){
    	{
    		objetBase.setPosition(listObjet[i].getposition());
    		objetBase.setScale(listObjet[i].getscaleObject());
-   		objetBase.setRotation(listObjet[i].getaxeRotation(),listObjet[i].getangleRotation());
+   		objetBase.setRotation(listObjet[i].getangleRotation());
    		modelMatrix = getModelMatrix();
    		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
         objetBase.Draw(shader);

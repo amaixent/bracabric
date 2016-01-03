@@ -1,7 +1,18 @@
 # Attention à ne pas laisser une ligne vide, toujours mettre un #
-# id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
 #
 #
-# nanosuit
-0 assets/models/scene3/house/fw43_lowpoly_n1.3ds 0.0 -1.75 -3.0 0.2 0.2 0.2 1.0 0.0 0.0 0.0
+# house
+0 assets/models/scene3/house/fw43_lowpoly_n1.3ds 0.0 0.0 -2.0 0.02 0.02 0.02 -90.0 0.0 -30.0 
 # 
+1 assets/models/scene3/house/fw43_lowpoly_n1.3ds -0.2 0.0 -2.0 0.02 0.02 0.02 -90.0 0.0 30.0 
+#
+2 assets/models/scene3/house/fw43_lowpoly_n1.3ds -0.1 1.0 -2.0 0.02 0.02 0.02 90.0 0.0 0.0 
+#
+3 assets/models/scene3/house/fw43_lowpoly_n1.3ds -0.2 0.0 -2.0 0.02 0.02 0.02 -45.0 0.0 0.0 
+#
+4 assets/models/scene3/house/fw43_lowpoly_n1.3ds 0.0 0.0 -2.0 0.02 0.02 0.02 -45.0 0.0 0.0 
+#
+5 assets/models/scene3/house/fw43_lowpoly_n1.3ds 0.6 0.0 -2.1 0.02 0.02 0.02 -90 0.0 90.0
+#
+6 assets/models/scene3/house/fw43_lowpoly_n1.3ds 0.6 0.0 -2.1 0.02 0.02 0.02 -90 0.0 90.0  

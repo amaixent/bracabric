@@ -19,8 +19,7 @@ void Scene::LoadTasFromFile(string fichierTas){
     string contenu, temp, caractere, path;
     vec3 po, sc, ro;
     int id;
-    float angleR;
-    float convertedToFloat[12];
+    float convertedToFloat[11];
     if(fichier)
     {
         while(getline(fichier, contenu)){
@@ -35,7 +34,7 @@ void Scene::LoadTasFromFile(string fichierTas){
                 //Conversion dans le bon format (int pour l'id, float pour le reste)
                 stringstream convert0(objet[0]);
                 convert0 >> id;
-                for(int i = 2; i < 12; i++){
+                for(int i = 2; i < 11; i++){
                     stringstream convert(objet[i]);
                     convert >> convertedToFloat[i];
                 }
@@ -43,8 +42,7 @@ void Scene::LoadTasFromFile(string fichierTas){
                 po = vec3(convertedToFloat[2], convertedToFloat[3], convertedToFloat[4]);
                 sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
                 ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
-                angleR = convertedToFloat[11];
-                Tas newTas(id, path, po, sc, ro, angleR);
+                Tas newTas(id, path, po, sc, ro);
                 tabTas[id] = newTas;
             }
         }
