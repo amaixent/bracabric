@@ -50,6 +50,7 @@ void Scene::LoadTasFromFile(string fichierTas){
     }
     else
         cerr << "Impossible d'ouvrir le fichier : " << fichierTas << endl;
+
 }
 
 void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){

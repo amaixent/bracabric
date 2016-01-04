@@ -1,9 +1,9 @@
 # Attention à ne pas laisser une ligne vide, toujours mettre un #
-# id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
 #
 #
 # oxygen
-0 assets/models/scene2/oxygen/3d-model.3ds  0.0 -1.75 -3.0 0.02 0.02 0.02 0.0 0.0 0.0 0.0
-1 assets/models/scene2/oxygen/3d-model.3ds  0.0 -1.75 -3.0 0.002 0.002 0.002 0.0 0.0 1.0 20.0
-2 assets/models/scene2/oxygen/3d-model.3ds  0.0 -1.75 -3.0 0.002 0.002 0.002 0.0 0.0 1.0 40.0
+0 assets/models/scene2/oxygen/3d-model.3ds  0.0 -1.75 -3.0 0.02 0.02 0.02 0.0 0.0 0.0 
+1 assets/models/scene2/oxygen/3d-model.3ds  0.0 -1.75 -3.0 0.002 0.002 0.002 0.0 0.0 20.0
+2 assets/models/scene2/oxygen/3d-model.3ds  0.0 -1.75 -3.0 0.002 0.002 0.002 0.0 0.0 40.0
 #

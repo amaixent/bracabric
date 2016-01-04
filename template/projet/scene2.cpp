@@ -39,7 +39,9 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
     //Initialisation de la scene
+      std::cout << "Hello : "<< std::endl;
     Scene maScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt");
+    std::cout << "coucou : "<< std::endl;
     //Initialisation Trajectoire et Camera
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
     Trajectoire trajectoire(1, positions);

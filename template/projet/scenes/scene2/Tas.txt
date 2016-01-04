@@ -1,23 +1,23 @@
 # Attention à ne pas laisser une ligne vide, toujours mettre un #
-# id chemin/FichierObjet.txt px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+# id chemin/FichierObjet.txt px py pz sx sy sz anglRx anglRy anglRz
 #
 # Attention à bien choisir des identifiants différents compris entre 0 et 5
 #
 # Tas1 : Seahorse mega star 
-0 projet/scenes/scene2/seahorse.txt -15.0 15.0 -40.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#0 projet/scenes/scene2/seahorse.txt -15.0 15.0 -40.0 1.0 1.0 1.0 0.0 0.0 0.0
 #
 # Tas2 : Cell raining 
-1 projet/scenes/scene2/cell.txt 10.0 25.0 -60.0 1.0 1.0 1.0 0.0 0.0 0.0 100.0
+#1 projet/scenes/scene2/cell.txt 10.0 25.0 -60.0 1.0 1.0 1.0 0.0 0.0 0.0 
 #
 # Tas3 : Snowflakes Venue for little feet
-2 projet/scenes/scene2/snowflake.txt 0.0 0.0 -4.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#2 projet/scenes/scene2/snowflake.txt 0.0 0.0 -4.0 1.0 1.0 1.0 0.0 0.0 0.0
 #
 # Tas4 : tas de fence
-3 projet/scenes/scene2/fence.txt 0.0 0.0 -40.0 1.0 1.0 1.0 1.0 0.0 0.0 0.0
+#3 projet/scenes/scene2/fence.txt 0.0 0.0 -40.0 1.0 1.0 1.0 0.0 0.0 0.0
 #
 # Tas5 : fishy project :( please shine !
-4 projet/scenes/scene2/goldfish.txt 0.0 0.0 -4.0 3.0 3.0 3.0 0.0 1.0 0.0 30.0
+#4 projet/scenes/scene2/goldfish.txt 0.0 0.0 -4.0 3.0 3.0 3.0 0.0 30.0 0.0 
 #
 # Tas6 : liquid
-5 projet/scenes/scene2/liquid.txt -10.0 -2.0 -60.0 0.9 0.9 0.9 0.0 1.0 0.0 85.0
-
+5 projet/scenes/scene2/liquid.txt -10.0 -2.0 -60.0 0.9 0.9 0.9 0.0 85.0 0.0 
+#

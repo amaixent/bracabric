@@ -1,21 +1,21 @@
 # Attention à ne pas laisser une ligne vide, toujours mettre un #
-# id chemin/objet.obj px py pz sx sy sz AxeRx AxeRy AxeRz anglRotation
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
 #
 #
 # cell
-0 assets/models/scene2/cell/cell_3DS.3DS  0.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 0.0
-1 assets/models/scene2/cell/cell_3DS.3DS  13.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 0.0
-2 assets/models/scene2/cell/cell_3DS.3DS  26.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 0.0
-3 assets/models/scene2/cell/cell_3DS.3DS  7.5 0.0 -14.0 0.08 0.08 0.08 0.0 0.0 0.0 0.0
-4 assets/models/scene2/cell/cell_3DS.3DS  20.5 0.0 -14.0 0.08 0.08 0.08 0.0 0.0 0.0 0.0
-5 assets/models/scene2/cell/cell_3DS.3DS  15.0 0.0 -27.0 0.08 0.08 0.08 0.0 0.0 0.0 0.0
-6 assets/models/scene2/cell/cell_3DS.3DS  7.5 -7.5 -14.0 0.06 0.06 0.06 0.0 0.0 0.0 0.0
-7 assets/models/scene2/cell/cell_3DS.3DS  15.0 -7.5 -14.0 0.04 0.04 0.04 0.0 0.0 0.0 0.0
-8 assets/models/scene2/cell/cell_3DS.3DS  15.0 -7.5 -1.0 0.04 0.04 0.04 0.0 0.0 0.0 0.0
-9 assets/models/scene2/cell/cell_3DS.3DS  19.0 -10.5 -14.0 0.04 0.04 0.04 0.0 0.0 0.0 0.0
-10 assets/models/scene2/cell/cell_3DS.3DS  15.0 -15.5 -14.0 0.02 0.02 0.02 0.0 0.0 0.0 0.0
-11 assets/models/scene2/cell/cell_3DS.3DS  15.0 -15.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 0.0
-12 assets/models/scene2/cell/cell_3DS.3DS  15.0 -19.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 0.0
-13 assets/models/scene2/cell/cell_3DS.3DS  12.0 -23.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 0.0
-14 assets/models/scene2/cell/cell_3DS.3DS  17.0 -21.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 0.0
+0 assets/models/scene2/cell/cell_3DS.3DS  0.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 
+1 assets/models/scene2/cell/cell_3DS.3DS  13.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 
+2 assets/models/scene2/cell/cell_3DS.3DS  26.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 
+3 assets/models/scene2/cell/cell_3DS.3DS  7.5 0.0 -14.0 0.08 0.08 0.08 0.0 0.0 0.0 
+4 assets/models/scene2/cell/cell_3DS.3DS  20.5 0.0 -14.0 0.08 0.08 0.08 0.0 0.0 0.0 
+5 assets/models/scene2/cell/cell_3DS.3DS  15.0 0.0 -27.0 0.08 0.08 0.08 0.0 0.0 0.0 
+6 assets/models/scene2/cell/cell_3DS.3DS  7.5 -7.5 -14.0 0.06 0.06 0.06 0.0 0.0 0.0 
+7 assets/models/scene2/cell/cell_3DS.3DS  15.0 -7.5 -14.0 0.04 0.04 0.04 0.0 0.0 0.0 
+8 assets/models/scene2/cell/cell_3DS.3DS  15.0 -7.5 -1.0 0.04 0.04 0.04 0.0 0.0 0.0 
+9 assets/models/scene2/cell/cell_3DS.3DS  19.0 -10.5 -14.0 0.04 0.04 0.04 0.0 0.0 0.0 
+10 assets/models/scene2/cell/cell_3DS.3DS  15.0 -15.5 -14.0 0.02 0.02 0.02 0.0 0.0 0.0 
+11 assets/models/scene2/cell/cell_3DS.3DS  15.0 -15.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 
+12 assets/models/scene2/cell/cell_3DS.3DS  15.0 -19.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 
+13 assets/models/scene2/cell/cell_3DS.3DS  12.0 -23.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 
+14 assets/models/scene2/cell/cell_3DS.3DS  17.0 -21.5 -1.0 0.02 0.02 0.02 0.0 0.0 0.0 
 #
