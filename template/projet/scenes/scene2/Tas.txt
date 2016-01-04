@@ -13,11 +13,11 @@
 #2 projet/scenes/scene2/snowflake.txt 0.0 0.0 -4.0 1.0 1.0 1.0 0.0 0.0 0.0
 #
 # Tas4 : tas de fence
-#3 projet/scenes/scene2/fence.txt 0.0 0.0 -40.0 1.0 1.0 1.0 0.0 0.0 0.0
+3 projet/scenes/scene2/fence.txt 0.0 0.0 -40.0 1.0 1.0 1.0 0.0 0.0 0.0
 #
 # Tas5 : fishy project :( please shine !
 #4 projet/scenes/scene2/goldfish.txt 0.0 0.0 -4.0 3.0 3.0 3.0 0.0 30.0 0.0 
 #
 # Tas6 : liquid
-5 projet/scenes/scene2/liquid.txt -10.0 -2.0 -60.0 0.9 0.9 0.9 0.0 85.0 0.0 
+#5 projet/scenes/scene2/liquid.txt -10.0 -2.0 -60.0 0.9 0.9 0.9 0.0 85.0 0.0 
 #
