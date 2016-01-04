@@ -20,4 +20,4 @@
 4 projet/scenes/scene1/quad.txt 3.0 -1.75 -15.0 1.0 1.0 1.0 0.0 0.0 0.0 
 #
 # Tas5 : Spherical_Maze
-5 projet/scenes/scene1/Spherical_Maze.txt -3.0 1.75 -18.0 1.0 1.0 1.0 0.0 0.0 0.0 
+5 projet/scenes/scene1/Spherical_Maze.txt -3.0 1.75 -18.0 10.0 10.0 10.0 90.0 0.0 0.0 

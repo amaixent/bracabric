@@ -78,15 +78,16 @@ void Tas::LoadObjectFromFile(string fichierObjet){
 mat4 Tas::getModelMatrix(){
 		mat4 modelMatrix  = mat4(1.0f);
         modelMatrix = translate(modelMatrix, position);
-        modelMatrix = translate(modelMatrix, objetBase.getposition()); 
-        
-        modelMatrix = scale(modelMatrix, scaleTas);
-        modelMatrix = scale(modelMatrix, objetBase.getscaleObject());
 
+        modelMatrix = scale(modelMatrix, scaleTas);
         //Rotation commune à tous les éléments du tas.
         modelMatrix = rotate(modelMatrix, radians(angleRotation[0]), vec3(1,0,0));
-    	modelMatrix = rotate(modelMatrix, radians(angleRotation[1]), vec3(0,1,0));
-    	modelMatrix = rotate(modelMatrix, radians(angleRotation[2]), vec3(0,0,1));
+        modelMatrix = rotate(modelMatrix, radians(angleRotation[1]), vec3(0,1,0));
+        modelMatrix = rotate(modelMatrix, radians(angleRotation[2]), vec3(0,0,1));
+
+        modelMatrix = translate(modelMatrix, objetBase.getposition()); 
+        
+        modelMatrix = scale(modelMatrix, objetBase.getscaleObject());
 
         //rotation propre à l'objet.
         vec3 angle = objetBase.getangleRotation();
