@@ -22,11 +22,14 @@ namespace glimac {
          // {
          //   m_fDistance =0.0;
          // }
+
+
     }
     
     float TrackballCamera::getm_fDistance(){
       return m_fDistance;
     }
+
 
     void TrackballCamera::rotateLeft(float degrees) {
         m_fAngleX += degrees / 180 * M_PI;
@@ -41,6 +44,14 @@ namespace glimac {
 
     } 
 
+    float TrackballCamera::getm_fAngleX(){
+      return m_fAngleX;
+    }
+
+    void TrackballCamera::resetm_fAngleX(){
+        m_fAngleX = 0;
+    }
+
     void TrackballCamera::rotateUp(float degrees){
          m_fAngleY += degrees / 180 * M_PI;
     
@@ -53,6 +64,13 @@ namespace glimac {
         //      m_fAngleY = -1.11;
     }
 
+    float TrackballCamera::getm_fAngleY(){
+      return m_fAngleY;
+    }
+
+    void TrackballCamera::resetm_fAngleY(){
+        m_fAngleY = 0.0;
+    }
     glm::mat4 TrackballCamera::getViewMatrix() const{
 
         glm::mat4 MatrixId = glm::mat4(1.0); //Matrice Identité

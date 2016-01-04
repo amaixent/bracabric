@@ -54,19 +54,26 @@ int main(int argc, char** argv) {
         SDL_Event e;
         glm::ivec2 mousePos = windowManager.getMousePosition();
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT) {
-                done = true; // Leave the loop after this iteration
-            }
-            if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
-             
-                float mousePosX = mousePos.x/800.0f - 0.5;
-                float mousePosY = mousePos.y/600.0f - 0.5;
+                if(e.type == SDL_QUIT) {
+                    done = true; // Leave the loop after this iteration
+                }
+                if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
+                 
+                    float mousePosX = mousePos.x/800.0f - 0.5;
+                    float mousePosY = mousePos.y/600.0f - 0.5;
 
-                trackCam.rotateLeft(2*mousePosX);
-                trackCam.rotateUp(2*mousePosY);
-            }
-
-                if (windowManager.isKeyPressed(SDLK_z)) trackCam.moveFront(-0.1);
+                    trackCam.rotateLeft(2*mousePosX);
+                    trackCam.rotateUp(2*mousePosY);
+                }
+                if (windowManager.isKeyPressed(SDLK_z)){
+                    if((trackCam.getm_fAngleX()) == 0 && (trackCam.getm_fAngleY() == 0)){
+                        trackCam.moveFront(-0.1);
+                   }
+                    if((trackCam.getm_fAngleX() != 0) || (trackCam.getm_fAngleY() != 0)) {
+                        trackCam.resetm_fAngleX();
+                        trackCam.resetm_fAngleY();
+                   }
+               } 
                 if (windowManager.isKeyPressed(SDLK_s)) {
                     trackCam.moveFront(0.1);
                     if(trackCam.getm_fDistance() == 0.0) std::cout<<"Pour un point de vue plus large, aller dans TrackballCamera.cpp et suivre les indics :)"<<std::endl;

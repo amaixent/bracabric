@@ -22,8 +22,12 @@ public:
     void moveFront(float delta); //permettant d'avancer / reculer la caméra. Lorsque delta est positif la caméra doit avancer, sinon elle doit reculer.
     float getm_fDistance();
     void rotateLeft(float degrees); //permettant de tourner latéralement autour du centre de vision.
+    float getm_fAngleX();
+    void resetm_fAngleX();
+    float getm_fAngleY();
+    void resetm_fAngleY();
     void rotateUp(float degrees); //permettant de tourner verticalement autour du centre de vision.
-
+    void chemin();
     glm::mat4 getViewMatrix() const;
 };
 
