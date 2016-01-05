@@ -26,6 +26,8 @@ public:
 	void LoadObjectFromFile(string fichierObjet);
 	mat4 getModelMatrix();
 	int getlistObjetSize();
+	vec3 getPositionTas();
+	int getIdTas();
 
 	void Draw(Shader shader);
 	//void action();

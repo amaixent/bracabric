@@ -126,3 +126,11 @@ void Tas::Draw(Shader shader){
     // 	ListeParcourue=ListeParcourue->next;//Passage à l'élément suivant de la liste.
     // }
 }
+
+vec3 Tas::getPositionTas(){
+    return position;
+}
+
+int Tas::getIdTas(){
+    return id;
+}

@@ -73,16 +73,18 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
     glUniform3f(glGetUniformLocation(shader.Program , "uLightPos_vs"),temp2[0],temp2[1],temp2[2]);
     glUniform3f(glGetUniformLocation(shader.Program , "uLightIntensity"), 1.5,1.5,1.5);
 
-    // Scène 1 : color_position.fs.glsl
-    //glUniform3f(glGetUniformLocation(shader.Program , "ucolorTas"), 1.0,1.0,1.0);
+
     //glUniform3f(glGetUniformLocation(shader.Program , "ucolorObjet"), 1.0,1.0,1.0);
     
     for (int i = 0; i < 10; ++i)
     {   
         if(tabTas[i].getlistObjetSize()!= 0){
-           tabTas[i].Draw(shader); 
+            tabTas[i].Draw(shader);
+            // Scène 1 : color_position.fs.glsl
+            vec3 temp3 = tabTas[i].getPositionTas();
+            glUniform1f(glGetUniformLocation(shader.Program , "uIdTas"), tabTas[i].getIdTas());
         }
-        
+            
     }
 }
 
