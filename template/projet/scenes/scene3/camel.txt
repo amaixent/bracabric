@@ -2,6 +2,27 @@
 # id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz 
 #
 #
-# nanosuit
-0 assets/models/scene3/camel/CamelN040113.3DS 0.0 -1.75 -3.0 0.2 0.2 0.2 0.0 0.0 0.0 
-# 
+# Camel
+#
+# Roue
+0 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 0.0 90.0 
+#
+1 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 45.0 90.0 
+#
+2 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 90.0 90.0 
+#
+3 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 -45.0 90.0 
+#
+4 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 -90.0 90.0 
+#
+5 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 135.0 90.0 
+#
+6 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 -135.0 90.0 
+#
+7 assets/models/scene3/camel/CamelN040113.3DS 0.0 0.0 -5.0 0.01 0.01 0.01 -45.0 180.0 90.0 
+#
+# fixes
+8 assets/models/scene3/camel/CamelN040113.3DS 2.0 0.0 -5.0 0.01 0.01 0.01 -45.0 0.0 90.0 
+#
+9 assets/models/scene3/camel/CamelN040113.3DS -2.0 0.0 -5.0 0.01 0.01 0.01 -45.0 0.0 90.0 
+#
