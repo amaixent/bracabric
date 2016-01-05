@@ -63,7 +63,7 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
-    //Blin Phong
+    //Blin Phong lampe_torche.fs.glsl
     glUniform1f(glGetUniformLocation(shader.Program , "uShininess"),2.0);
     glUniform3f(glGetUniformLocation(shader.Program , "uKd"), 1.0,1.0,1.0);
     glUniform3f(glGetUniformLocation(shader.Program , "uKs"), 1.0,1.0,1.0);
@@ -72,8 +72,12 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
     vec4 temp2 = view*vec4(1.0,1.0,1.0,1.0);
     glUniform3f(glGetUniformLocation(shader.Program , "uLightPos_vs"),temp2[0],temp2[1],temp2[2]);
     glUniform3f(glGetUniformLocation(shader.Program , "uLightIntensity"), 1.5,1.5,1.5);
+
+    // Scène 1 : color_position.fs.glsl
+    //glUniform3f(glGetUniformLocation(shader.Program , "ucolorTas"), 1.0,1.0,1.0);
+    //glUniform3f(glGetUniformLocation(shader.Program , "ucolorObjet"), 1.0,1.0,1.0);
     
-    for (int i = 0; i < 6; ++i)
+    for (int i = 0; i < 10; ++i)
     {   
         if(tabTas[i].getlistObjetSize()!= 0){
            tabTas[i].Draw(shader); 

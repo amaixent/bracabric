@@ -14,7 +14,7 @@ private:
 	int id;
 	Shader shader;
 	//List ListObjet;
-	Tas tabTas[6]; 
+	Tas tabTas[10]; 
 	int idTrajectoire;
 	
 public:
