@@ -5,9 +5,9 @@
 namespace glimac {
 
     TrackballCamera::TrackballCamera() {
-         m_fDistance = 0;
-         m_fAngleX = 0;
-         m_fAngleY = 0;
+         m_fDistance = 0.0;
+         m_fAngleX = 0.0;
+         m_fAngleY = -0.2;
     }
 
     TrackballCamera::~TrackballCamera() {
@@ -68,8 +68,8 @@ namespace glimac {
       return m_fAngleY;
     }
 
-    void TrackballCamera::resetm_fAngleY(){
-        m_fAngleY = 0.0;
+    void TrackballCamera::resetm_fAngleY(float angle){
+        m_fAngleY = angle;
     }
     glm::mat4 TrackballCamera::getViewMatrix() const{
 

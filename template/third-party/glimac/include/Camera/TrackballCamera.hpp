@@ -16,7 +16,7 @@ private:
 
 public:
 
-	TrackballCamera(); //Constructeur
+    TrackballCamera(); //Constructeur
    ~TrackballCamera(); //Destructeur
 
     void moveFront(float delta); //permettant d'avancer / reculer la caméra. Lorsque delta est positif la caméra doit avancer, sinon elle doit reculer.
@@ -25,7 +25,7 @@ public:
     float getm_fAngleX();
     void resetm_fAngleX();
     float getm_fAngleY();
-    void resetm_fAngleY();
+    void resetm_fAngleY(float angle);
     void rotateUp(float degrees); //permettant de tourner verticalement autour du centre de vision.
     void chemin();
     glm::mat4 getViewMatrix() const;
