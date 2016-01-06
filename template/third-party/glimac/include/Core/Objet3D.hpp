@@ -37,6 +37,7 @@ public:
 
 	mat4 getModelMatrix();
 	void Draw(Shader shader);
+	void changeScene();
 	
 
 	// void seDeplacer();

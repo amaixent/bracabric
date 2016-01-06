@@ -5,7 +5,7 @@
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 
-#include "Core/Scene.hpp"
+#include "Core/Monde.hpp"
 
 
 using namespace glimac;
@@ -39,8 +39,9 @@ int main(int argc, char** argv) {
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
-    //Initialisation de la scene
-    Scene maScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/sea/");
+    //Initialisation du monde
+    Monde myWorld;
+
     //Initialisation Trajectoire et Camera
     mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
     Trajectoire trajectoire(1, positions);
@@ -78,6 +79,10 @@ int main(int argc, char** argv) {
                 if (windowManager.isKeyPressed(SDLK_k)) trackCam.rotateUp(0.5);
                 if (windowManager.isKeyPressed(SDLK_j)) trackCam.rotateLeft(-0.5);
                 if (windowManager.isKeyPressed(SDLK_l)) trackCam.rotateLeft(0.5);
+
+                if (windowManager.isKeyPressed(SDLK_v)) myWorld.chargeScene(1);
+                if (windowManager.isKeyPressed(SDLK_b)) myWorld.chargeScene(2);
+                if (windowManager.isKeyPressed(SDLK_n)) myWorld.chargeScene(3);
         }
 
         /*********************************
@@ -92,7 +97,7 @@ int main(int argc, char** argv) {
 
        
         
-        maScene.Draw(trajectoire,trackCam,screenWidth,screenHeight);
+        myWorld.Draw(trajectoire,trackCam,screenWidth,screenHeight);
 
 
 
@@ -101,6 +106,6 @@ int main(int argc, char** argv) {
     }
 
 
-
+    
     return EXIT_SUCCESS;
 }

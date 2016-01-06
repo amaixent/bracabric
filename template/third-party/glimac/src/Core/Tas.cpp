@@ -117,14 +117,6 @@ void Tas::Draw(Shader shader){
         objetBase.Draw(shader);
    	}
     
-    // while(ListeParcourue){
-    // 	objet_tmp = ListeParcourue->value;//Ici value est un objet3D voir liste_Objet3D.c
-    // 	modelMatrix = getModelMatrixTas(ListeParcourue->value);
-    //     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-    //     objet_tmp.Draw(shader);
-
-    // 	ListeParcourue=ListeParcourue->next;//Passage à l'élément suivant de la liste.
-    // }
 }
 
 vec3 Tas::getPositionTas(){
@@ -133,4 +125,8 @@ vec3 Tas::getPositionTas(){
 
 int Tas::getIdTas(){
     return id;
+}
+void Tas::changeScene(){
+    listObjet.clear();
+    objetBase.changeScene();
 }

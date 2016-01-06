@@ -30,6 +30,7 @@ public:
 	int getIdTas();
 
 	void Draw(Shader shader);
+	void changeScene();
 	//void action();
 
 };

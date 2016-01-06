@@ -94,6 +94,10 @@ namespace glimac {
 		model.Draw(shader);
 	}
 
+	void Objet3D::changeScene(){
+		model.changeScene();
+	}
+
 	// void Objet3D::seDeplacer(){
 
 	// }

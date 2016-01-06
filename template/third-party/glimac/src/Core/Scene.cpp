@@ -2,6 +2,7 @@
 
 
 namespace glimac {
+    Scene::Scene(){}
     Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas){
         shader.loadShader(fichierVs, fichierFs);
         LoadTasFromFile(fichierTas);
@@ -9,10 +10,39 @@ namespace glimac {
         idTrajectoire = 0;
     }
 
+    Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas, string fichierSkybox){
+        shader.loadShader(fichierVs, fichierFs);
+        LoadTasFromFile(fichierTas);
+        id = identifiant;
+        idTrajectoire = 0;
+        mySkybox.loadSkybox(fichierSkybox); 
+    }
+
     Scene::~Scene(){
     }
 
-    
+void Scene::changeScene(){
+        
+    this->mySkybox.changeSkybox();
+     for (int i = 0; i < tabTas.size(); ++i)
+    {    
+        if(tabTas[i].getlistObjetSize()!= 0){
+            tabTas[i].changeScene();
+        }
+    }
+    tabTas.clear();
+}
+
+void Scene::chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierSkybox){
+    changeScene();
+    shader.loadShader(fichierVs, fichierFs);
+    LoadTasFromFile(fichierTas);
+    id = identifiant;
+    idTrajectoire = 0;
+    mySkybox.loadSkybox(fichierSkybox);
+
+}   
+
 void Scene::LoadTasFromFile(string fichierTas){
     ifstream fichier(fichierTas);
 
@@ -43,7 +73,7 @@ void Scene::LoadTasFromFile(string fichierTas){
                 sc = vec3(convertedToFloat[5], convertedToFloat[6], convertedToFloat[7]);
                 ro = vec3(convertedToFloat[8], convertedToFloat[9], convertedToFloat[10]);
                 Tas newTas(id, path, po, sc, ro);
-                tabTas[id] = newTas;
+                tabTas.push_back(newTas);
             }
         }
         fichier.close();
@@ -54,6 +84,8 @@ void Scene::LoadTasFromFile(string fichierTas){
 }
 
 void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
+
+    mySkybox.Draw(camera,screenWidth,screenHeight);
 
     shader.Use();   // <-- Don't forget this one!
         
@@ -76,7 +108,7 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
 
     //glUniform3f(glGetUniformLocation(shader.Program , "ucolorObjet"), 1.0,1.0,1.0);
     
-    for (int i = 0; i < 10; ++i)
+    for (int i = 0; i < tabTas.size(); ++i)
     {   
         if(tabTas[i].getlistObjetSize()!= 0){
             tabTas[i].Draw(shader);
@@ -87,5 +119,8 @@ void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth
             
     }
 }
-
+int Scene::getId(){
+    return id;
 }
+}
+

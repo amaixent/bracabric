@@ -44,6 +44,12 @@ void Mesh::setupMesh()
     glBindVertexArray(0);
 }  
 
+void Mesh::changeScene(){
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
+    glDeleteVertexArrays(1, &VAO);
+}
+
 void Mesh::Draw(Shader shader) 
 {
     GLuint diffuseNr = 1;

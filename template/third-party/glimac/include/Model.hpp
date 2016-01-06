@@ -36,6 +36,7 @@ class Model
         }
         void loadModel(string path);
         void Draw(Shader shader);	
+         void changeScene();
     private:
         /*  Model Data  */
         vector<Mesh> meshes;
@@ -47,4 +48,5 @@ class Model
         GLint TextureFromFile(const char* path, string directory);
         vector<Texture> loadMaterialTextures(aiMaterial* mat, aiTextureType type, 
                                              string typeName);
+
 };

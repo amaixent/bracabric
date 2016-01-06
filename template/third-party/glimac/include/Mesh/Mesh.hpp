@@ -19,6 +19,7 @@ class Mesh {
         /*  Functions  */
         Mesh(vector<Vertex> vertices, vector<GLuint> indices, vector<Texture> textures);
         void Draw(Shader shader);
+        void changeScene();
     private:
         /*  Render data  */
         GLuint VAO, VBO, EBO;
