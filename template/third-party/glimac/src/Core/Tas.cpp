@@ -109,7 +109,8 @@ void Tas::Draw(Shader shader){
 
    	for (int i = 0; i < listObjet.size(); ++i)
    	{
-   		objetBase.setPosition(listObjet[i].getposition());
+   		ActionTas(id, objetBase.getEmplacement(),&listObjet[i]);
+        objetBase.setPosition(listObjet[i].getposition());
    		objetBase.setScale(listObjet[i].getscaleObject());
    		objetBase.setRotation(listObjet[i].getangleRotation());
    		modelMatrix = getModelMatrix();

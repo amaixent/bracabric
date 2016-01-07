@@ -14,4 +14,4 @@
 # camel
 #4 projet/scenes/scene3/camel.txt 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 
 # bird
-#5 projet/scenes/scene3/bird.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 0.0 0.0 
+5 projet/scenes/scene3/bird.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 0.0 0.0 

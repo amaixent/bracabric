@@ -75,7 +75,13 @@ namespace glimac {
 		return angleRotation;
 	}
 
+	string Objet3D::getEmplacement(){
+		return emplacement;
+	}
 
+	int Objet3D::getId(){
+		return id;
+	}
 	
 	mat4 Objet3D::getModelMatrix(){
 		mat4 modelMatrix  = mat4(1.0f);

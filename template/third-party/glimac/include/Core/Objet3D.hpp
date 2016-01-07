@@ -33,6 +33,8 @@ public:
 	vec3 getposition();
 	vec3 getscaleObject();
 	vec3 getangleRotation();
+	string getEmplacement();
+	int getId();
 	
 
 	mat4 getModelMatrix();
