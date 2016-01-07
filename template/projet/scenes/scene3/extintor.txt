@@ -1,0 +1,38 @@
+# Attention à ne pas laisser une ligne vide, toujours mettre un #
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz 
+#
+#
+# extintor
+0 assets/models/scene3/extintor/FireextinguisherN160814.3DS 0.3 0.2 -5.0 0.001 0.001 0.001 4.0 45.0 0.0 
+#
+1 assets/models/scene3/extintor/FireextinguisherN160814.3DS 0.1 0.0 -5.0 0.001 0.001 0.001 -50.0 45.0 0.0
+#
+2 assets/models/scene3/extintor/FireextinguisherN160814.3DS 0.2 0.0 -5.0 0.001 0.001 0.001 -20.0 45.0 0.0
+#
+3 assets/models/scene3/extintor/FireextinguisherN160814.3DS 0.1 0.2 -5.0 0.001 0.001 0.001 11.0 45.0 0.0 
+#
+4 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.6 0.0 -5.0 0.001 0.001 0.001 -20.0 45.0 0.0
+#
+5 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.8 0.2 -5.0 0.001 0.001 0.001 -30.0 45.0 0.0 
+#
+6 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.6 0.3 -5.0 0.001 0.001 0.001 -20.0 45.0 0.0
+#
+7 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.3 0.5 -5.0 0.001 0.001 0.001 -95.0 45.0 0.0 
+#
+#
+8 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.2 0.2 -5.0 0.001 0.001 0.001 -40.0 45.0 0.0 
+#
+9 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.1 0.3 -5.0 0.001 0.001 0.001 -50.0 45.0 0.0
+#
+10 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.3 0.2 -5.0 0.001 0.001 0.001 -15.0 45.0 0.0 
+#
+11 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.6 0.0 -5.0 0.001 0.001 0.001 0.0 45.0 0.0
+#
+12 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.3 0.2 -5.0 0.001 0.001 0.001 -45.0 45.0 0.0 
+#
+13 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.2 0.0 -5.0 0.001 0.001 0.001 -40.0 45.0 0.0 
+#
+14 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.1 0.3 -5.0 0.001 0.001 0.001 -35.0 45.0 0.0
+#
+15 assets/models/scene3/extintor/FireextinguisherN160814.3DS -0.3 0.6 -5.0 0.001 0.001 0.001 -15.0 45.0 0.0 
+#
