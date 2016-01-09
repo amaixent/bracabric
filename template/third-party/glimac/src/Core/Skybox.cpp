@@ -8,7 +8,7 @@ using namespace glimac;
 
 	}
 
-void Skybox::loadSkybox(int identifiant,string fichierSkybox){
+void Skybox::loadSkybox(int identifiant){
 
   	// if (identifiant == 3)
    //  {
@@ -65,20 +65,36 @@ void Skybox::loadSkybox(int identifiant,string fichierSkybox){
      40.0f, -40.0f,  40.0f
 	};
 		
-	vector<const string> faces;
-	string path;
-	path = fichierSkybox + "right.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "left.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "up.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "bottom.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "back.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "front.tga";
-	faces.push_back(path);
+	vector<const GLchar*> faces;
+
+  if (identifiant == 1)
+  {
+    faces.push_back("assets/skybox/hw_nightsky/right.tga");
+  faces.push_back("assets/skybox/hw_nightsky/left.tga");
+  faces.push_back("assets/skybox/hw_nightsky/up.tga");
+  faces.push_back("assets/skybox/hw_nightsky/bottom.tga");
+  faces.push_back("assets/skybox/hw_nightsky/back.tga");
+  faces.push_back("assets/skybox/hw_nightsky/front.tga");
+  }
+  else if(identifiant == 2){
+    faces.push_back("assets/skybox/blood/right.tga");
+    faces.push_back("assets/skybox/blood/left.tga");
+    faces.push_back("assets/skybox/blood/up.tga");
+    faces.push_back("assets/skybox/blood/bottom.tga");
+    faces.push_back("assets/skybox/blood/back.tga");
+    faces.push_back("assets/skybox/blood/front.tga");
+
+  }
+  else if(identifiant == 3){
+    faces.push_back("assets/skybox/blood/right.tga");
+    faces.push_back("assets/skybox/blood/left.tga");
+    faces.push_back("assets/skybox/blood/up.tga");
+    faces.push_back("assets/skybox/blood/bottom.tga");
+    faces.push_back("assets/skybox/blood/back.tga");
+    faces.push_back("assets/skybox/blood/front.tga");
+
+  }
+  
 	skyboxTexture = loadCubemap(faces); 
 
 	
@@ -94,7 +110,7 @@ void Skybox::loadSkybox(int identifiant,string fichierSkybox){
 
 	}
 
-GLuint Skybox::loadCubemap(vector<const string> faces)
+GLuint Skybox::loadCubemap(vector<const GLchar*> faces)
 {
     GLuint textureID;
     glGenTextures(1, &textureID);

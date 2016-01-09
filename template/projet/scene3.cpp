@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
      *********************************/
     //Initialisation de la scene
 
-    Scene maScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/blood/");
+    Scene maScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt");
 
     //FreeflyCamera freefly;
     TrackballCamera trackCam;

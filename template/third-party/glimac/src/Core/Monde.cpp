@@ -15,14 +15,14 @@ namespace glimac {
 		if (identifiant != myScene.getId())
 		{	if (identifiant ==1)
 			{
-				this->myScene.chargeScene(1,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene1/Tas.txt", "assets/skybox/hw_nightsky/");
+				this->myScene.chargeScene(1,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene1/Tas.txt");
 			}
 			else if (identifiant == 2){
 				//this->panneauDebut.Draw();
-				this->myScene.chargeScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt", "assets/skybox/sea/");
+				this->myScene.chargeScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt");
 			}
 			else if (identifiant == 3){
-				this->myScene.chargeScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/blood/");
+				this->myScene.chargeScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt");
 			}
 			else if (identifiant ==0){
 				this->myScene.changeScene();

@@ -22,13 +22,13 @@ private:
     Shader skyboxShader;
     GLuint skyboxTexture;
     GLuint skyboxVAO, skyboxVBO;
-    GLuint loadCubemap(vector<const string> faces);
+    GLuint loadCubemap(vector<const GLchar*> faces);
     
 public:
 	Skybox();
     ~Skybox();
 
-    void loadSkybox(int identifiant, string fichierSkybox);
+    void loadSkybox(int identifiant);
     void Draw(TrackballCamera camera,float screenWidth, float screenHeight, int idScene);
     void changeSkybox();
 };
