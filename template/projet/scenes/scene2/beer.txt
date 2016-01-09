@@ -1,0 +1,10 @@
+# Attention à ne pas laisser une ligne vide, toujours mettre un #
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
+#
+#
+# beer
+0 assets/models/scene2/beer/Bottlebeer1N261113.3DS  8.0 -2.75 -3.0 1.0 1.0 1.0 0.0 0.0 0.0
+1 assets/models/scene2/beer/Bottlebeer1N261113.3DS  8.0 -2.75 -30.0 1.0 1.0 1.0 0.0 0.0 0.0 
+2 assets/models/scene2/beer/Bottlebeer1N261113.3DS  9.0 -2.75 -20.0 0.4 0.4 0.4 0.0 0.0 0.0 
+3 assets/models/scene2/beer/Bottlebeer1N261113.3DS  12.0 -2.75 -35.0 0.4 0.4 0.4 0.0 0.0 0.0 
+#

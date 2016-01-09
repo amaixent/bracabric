@@ -21,6 +21,7 @@ public:
 
     void moveFront(float delta); //permettant d'avancer / reculer la caméra. Lorsque delta est positif la caméra doit avancer, sinon elle doit reculer.
     float getm_fDistance();
+    void resetPositionInit();
     void rotateLeft(float degrees); //permettant de tourner latéralement autour du centre de vision.
     float getm_fAngleX();
     void resetm_fAngleX();

@@ -1,0 +1,7 @@
+# Attention à ne pas laisser une ligne vide, toujours mettre un #
+# id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
+#
+#
+# fish
+0 assets/models/scene2/figurine/FigurineN290514.3DS  10.0 -2.75 -30.0 1.0 1.0 1.0 -90.0 0.0 0.0 
+#

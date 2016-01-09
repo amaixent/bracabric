@@ -22,12 +22,16 @@ namespace glimac {
          // {
          //   m_fDistance =0.0;
          // }
-
-
     }
     
     float TrackballCamera::getm_fDistance(){
       return m_fDistance;
+    }
+
+    void TrackballCamera::resetPositionInit(){
+         m_fDistance = 0.0;   
+         m_fAngleX = 0.0;
+         m_fAngleY = -0.2;
     }
 
 
