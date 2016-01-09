@@ -23,13 +23,12 @@ public:
 
 	Scene();
 	Scene(int identifiant, string fichierVs,string fichierFs,string fichierTas);
-	Scene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierSkybox);
 	~Scene();
 
 	//List LoadObjectFromFile(string fichierObjet, List ListObjet);
 	int getId();
 	void changeScene();
-	void chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierSkybox);
+	void chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas);
 	void LoadTasFromFile(string fichierTas);
 	void Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
 

@@ -8,7 +8,7 @@ using namespace glimac;
 
 	}
 
-void Skybox::loadSkybox(int identifiant,string fichierSkybox){
+void Skybox::loadSkybox(int identifiant){
 
   	/*if (identifiant == 3)
     {
