@@ -4,8 +4,6 @@ namespace glimac {
 	Monde::Monde(){
 		//panneauDebut.loadPanneau("assets/panneau/debut_scene.jpg");
 		chargeScene(1);
-
-
 	}
 
 
@@ -24,8 +22,7 @@ namespace glimac {
 				this->myScene.chargeScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt", "assets/skybox/sea/");
 			}
 			else if (identifiant == 3){
-				//this->panneauDebut.Draw();
-				this->myScene.chargeScene(3,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/lampe_torche.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/blood/");
+				this->myScene.chargeScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/blood/");
 			}
 			else if (identifiant ==0){
 				this->myScene.changeScene();

@@ -10,15 +10,15 @@ using namespace glimac;
 
 void Skybox::loadSkybox(int identifiant,string fichierSkybox){
 
-  	if (identifiant == 3)
+  	/*if (identifiant == 3)
     {
            skyboxShader.loadShader("projet/shaders/skybox_lampe_torche.vs.glsl", "projet/shaders/skybox_lampe_torche.fs.glsl");
 
     }
-    else{
+    else{*/
            skyboxShader.loadShader("projet/shaders/skybox.vs.glsl", "projet/shaders/skybox.fs.glsl");
 
-    }
+    //}
  
 	GLfloat skyboxVertices[] = {
     // Positions          
@@ -119,13 +119,16 @@ GLuint Skybox::loadCubemap(vector<const string> faces)
 
     return textureID;
 } 
-void Skybox::Draw(TrackballCamera camera,float screenWidth, float screenHeight){
+void Skybox::Draw(TrackballCamera camera,float screenWidth, float screenHeight, int idScene){
 
   glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
   // Draw skybox first
   glDepthMask(GL_FALSE);// Remember to turn depth writing off
   glm::mat4 view = camera.getViewMatrix();
   skyboxShader.Use();
+  //Mouvement de la skybox
+  if(idScene == 3) view = glm::translate(view, glm::vec3(0,20,-30));
+  else view = glm::translate(view, glm::vec3(0,0,-30));
   glUniformMatrix4fv(glGetUniformLocation(this->skyboxShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
   glUniformMatrix4fv(glGetUniformLocation(this->skyboxShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
   // skybox cube

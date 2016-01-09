@@ -11,8 +11,8 @@ class TrackballCamera {
 
 private:
     float m_fDistance; //distance par rapport au centre de la scène
-    float m_fAngleX; // l'angle effectuée par la caméra autour de l'axe x de la scène (rotation vers le haut ou vers le bas)
-    float m_fAngleY; //l'angle effectuée par la caméra autour de l'axe y de la scène (rotation vers la gauche ou vers la droite)
+    float m_fAngleX; // l'angle effectué par la caméra autour de l'axe x de la scène (rotation vers le haut ou vers le bas)
+    float m_fAngleY; //l'angle effectué par la caméra autour de l'axe y de la scène (rotation vers la gauche ou vers la droite)
 
 public:
 

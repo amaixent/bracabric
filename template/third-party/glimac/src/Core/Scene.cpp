@@ -85,7 +85,7 @@ void Scene::LoadTasFromFile(string fichierTas){
 
 void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
 
-    mySkybox.Draw(camera,screenWidth,screenHeight);
+    mySkybox.Draw(camera,screenWidth,screenHeight, id);
 
     shader.Use();   // <-- Don't forget this one!
         

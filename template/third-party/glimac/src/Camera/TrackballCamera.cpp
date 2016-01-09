@@ -16,12 +16,12 @@ namespace glimac {
     void TrackballCamera::moveFront(float delta) {
          m_fDistance += delta;
          
-         /*On peut avancer et reculer mais on ne peut pas aller derrière le point de départ ! */
-         /****Salut, boucle à désactiver pour placer les objets 3D****/
-         // if (m_fDistance>0.0)
-         // {
-         //   m_fDistance =0.0;
-         // }
+        /*On peut avancer et reculer mais on ne peut pas aller derrière le point de départ ! */
+        /****Salut, boucle à désactiver pour placer les objets 3D****/
+        // if (m_fDistance>0.0)
+        // {
+        //   m_fDistance =0.0;
+        // }
     }
     
     float TrackballCamera::getm_fDistance(){

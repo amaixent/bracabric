@@ -40,7 +40,8 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
     //Initialisation de la scene
-    Scene maScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/sea/");
+
+    Scene maScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt", "assets/skybox/blood/");
 
     //FreeflyCamera freefly;
     TrackballCamera trackCam;
@@ -65,12 +66,12 @@ int main(int argc, char** argv) {
             }
 
                 if (windowManager.isKeyPressed(SDLK_z)){
-                    if((trackCam.getm_fAngleX()) == 0 && (std::abs(trackCam.getm_fAngleY()+0.2) <=0.01)){
+                    if((trackCam.getm_fAngleX()) == 0 && (std::abs(trackCam.getm_fAngleY()+0.3) <=0.01)){
                         trackCam.moveFront(-0.1);
                    }
-                    if((trackCam.getm_fAngleX() != 0) || (std::abs(trackCam.getm_fAngleY()+0.2) >0.01)) {
+                    if((trackCam.getm_fAngleX() != 0) || (std::abs(trackCam.getm_fAngleY()+0.3) >0.01)) {
                         trackCam.resetm_fAngleX();
-                        trackCam.resetm_fAngleY(-0.20);
+                        trackCam.resetm_fAngleY(-0.3);
                    }
                }                if (windowManager.isKeyPressed(SDLK_s)) {
                     trackCam.moveFront(0.1);
