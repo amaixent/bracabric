@@ -22,7 +22,7 @@ private:
     Shader skyboxShader;
     GLuint skyboxTexture;
     GLuint skyboxVAO, skyboxVBO;
-    GLuint loadCubemap(vector<const string> faces);
+    GLuint loadCubemap(vector<const GLchar*> faces);
     
 public:
 	Skybox();

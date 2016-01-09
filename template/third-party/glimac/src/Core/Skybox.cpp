@@ -65,20 +65,27 @@ void Skybox::loadSkybox(int identifiant,string fichierSkybox){
      40.0f, -40.0f,  40.0f
 	};
 		
-	vector<const string> faces;
-	string path;
-	path = fichierSkybox + "right.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "left.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "up.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "bottom.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "back.tga";
-	faces.push_back(path);
-	path = fichierSkybox + "front.tga";
-	faces.push_back(path);
+	vector<const GLchar*> faces;
+	// GLchar* path;
+	// path = GLchar*(fichierSkybox) + "assets/skybox/blood/right.tga";
+	// faces.push_back(path);
+	// path = fichierSkybox + "left.tga";
+	// faces.push_back(path);
+	// path = fichierSkybox + "up.tga";
+	// faces.push_back(path);
+	// path = fichierSkybox + "bottom.tga";
+	// faces.push_back(path);
+	// path = fichierSkybox + "back.tga";
+	// faces.push_back(path);
+	// path = fichierSkybox + "front.tga";
+	// faces.push_back(path);
+
+  faces.push_back("assets/skybox/blood/right.tga");
+  faces.push_back("assets/skybox/blood/left.tga");
+  faces.push_back("assets/skybox/blood/up.tga");
+  faces.push_back("assets/skybox/blood/bottom.tga");
+  faces.push_back("assets/skybox/blood/back.tga");
+  faces.push_back("assets/skybox/blood/front.tga");
 	skyboxTexture = loadCubemap(faces); 
 
 	
@@ -94,7 +101,7 @@ void Skybox::loadSkybox(int identifiant,string fichierSkybox){
 
 	}
 
-GLuint Skybox::loadCubemap(vector<const string> faces)
+GLuint Skybox::loadCubemap(vector<const GLchar*> faces)
 {
     GLuint textureID;
     glGenTextures(1, &textureID);
