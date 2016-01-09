@@ -3,8 +3,19 @@
 #
 #
 # beer
-0 assets/models/scene2/beer/Bottlebeer1N261113.3DS  8.0 -2.75 -3.0 1.0 1.0 1.0 0.0 0.0 0.0
-1 assets/models/scene2/beer/Bottlebeer1N261113.3DS  8.0 -2.75 -30.0 1.0 1.0 1.0 0.0 0.0 0.0 
-2 assets/models/scene2/beer/Bottlebeer1N261113.3DS  9.0 -2.75 -20.0 0.4 0.4 0.4 0.0 0.0 0.0 
-3 assets/models/scene2/beer/Bottlebeer1N261113.3DS  12.0 -2.75 -35.0 0.4 0.4 0.4 0.0 0.0 0.0 
+0 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 0.0
+1 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -30.0
+2 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -45.0
+3 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -80.0
+4 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -95.0
+5 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -130.0
+6 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -145.0
+7 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -185.0
+8 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -200.0
+9 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -235.0
+10 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -250.0
+11 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -285.0
+12 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -300.0
+13 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -340.0
+#
 #

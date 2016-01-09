@@ -24,7 +24,8 @@ namespace glimac {
 			else if (identifiant ==0){
 				this->myScene.changeScene();
 			}
-		
+			
+			camera.resetPositionInit();
 		}	
 	}
 

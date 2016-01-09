@@ -5,7 +5,7 @@
 namespace glimac {
 
     TrackballCamera::TrackballCamera() {
-         m_fDistance = 0.0;
+         m_fDistance = 20.0;
          m_fAngleX = 0.0;
          m_fAngleY = -0.2;
     }
@@ -29,7 +29,7 @@ namespace glimac {
     }
 
     void TrackballCamera::resetPositionInit(){
-         m_fDistance = 0.0;   
+         m_fDistance = 20.0;   
          m_fAngleX = 0.0;
          m_fAngleY = -0.2;
     }

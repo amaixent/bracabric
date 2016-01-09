@@ -13,6 +13,7 @@ private:
 
 	
 public:
+	TrackballCamera camera;
 	Monde();
 	~Monde();
 
