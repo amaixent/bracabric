@@ -2,22 +2,25 @@
 # id chemin/FichierObjet.txt px py pz sx sy sz angleRx angleRy angleRz 
 #
 # Attention à bien choisir des identifiants différents compris entre 0 et 5
-#0.0 -1.75 -3.0
+#
 #
 # Tas0 : d12
-0 projet/scenes/scene1/d12.txt -8.0 -2 -10.0 7.0 7.0 7.0 0.0 0.0 0.0 
+0 projet/scenes/scene1/d12.txt -8.0 -3 10.0 7.0 7.0 7.0 0.0 0.0 0.0
 #
 # Tas1 : tetraedre
-1 projet/scenes/scene1/tetraedre.txt 10.0 -2 -20.0 7.0 7.0 7.0 0.0 0.0 0.0 
+1 projet/scenes/scene1/tetraedre.txt 10.0 -3 0.0 7.0 7.0 7.0 0.0 0.0 0.0
 #
 # Tas2 : cube
-2 projet/scenes/scene1/cube.txt -9.5 -2.5 -30.0 10.0 10.0 10.0 0.0 0.0 0.0
+2 projet/scenes/scene1/cube.txt -9.5 -3.5 -10.0 10.0 10.0 10.0 0.0 0.0 0.0
 #
 # Tas3 : cone
-3 projet/scenes/scene1/cone.txt -10.0 -2 -40.0 7.0 7.0 7.0 0.0 0.0 0.0
+3 projet/scenes/scene1/cone.txt -10.0 -3 -20.0 7.0 7.0 7.0 0.0 0.0 0.0
 #
 # Tas4 : quad
-4 projet/scenes/scene1/quad.txt 10.0 -2.3 -50.0 7.0 7.0 7.0 0.0 0.0 0.0 
+4 projet/scenes/scene1/quad.txt 10.0 -3.3 -30.0 7.0 7.0 7.0 0.0 0.0 0.0
 #
 # Tas5 : Spherical_Maze
-5 projet/scenes/scene1/Spherical_Maze.txt -10.0 2 -60.0 7.0 7.0 7.0 0.0 0.0 0.0 
+5 projet/scenes/scene1/Spherical_Maze.txt -10.0 3 -40.0 7.0 7.0 7.0 0.0 0.0 0.0
+#
+# Chemin - avec des quad
+6 projet/scenes/scene1/chemin.txt 0.0 -4 -50.0 1.0 1.0 1.0 0.0 0.0 0.0

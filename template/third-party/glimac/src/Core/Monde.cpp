@@ -13,7 +13,7 @@ namespace glimac {
 		if (identifiant != myScene.getId())
 		{	if (identifiant ==1)
 			{
-				this->myScene.chargeScene(1,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene1/Tas.txt", "assets/skybox/sea/");
+				this->myScene.chargeScene(1,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene1/Tas.txt", "assets/skybox/hw_nightsky/");
 			}
 			else if (identifiant == 2){
 				this->myScene.chargeScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt", "assets/skybox/sea/");
