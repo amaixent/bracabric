@@ -66,26 +66,35 @@ void Skybox::loadSkybox(int identifiant,string fichierSkybox){
 	};
 		
 	vector<const GLchar*> faces;
-	// GLchar* path;
-	// path = GLchar*(fichierSkybox) + "assets/skybox/blood/right.tga";
-	// faces.push_back(path);
-	// path = fichierSkybox + "left.tga";
-	// faces.push_back(path);
-	// path = fichierSkybox + "up.tga";
-	// faces.push_back(path);
-	// path = fichierSkybox + "bottom.tga";
-	// faces.push_back(path);
-	// path = fichierSkybox + "back.tga";
-	// faces.push_back(path);
-	// path = fichierSkybox + "front.tga";
-	// faces.push_back(path);
 
-  faces.push_back("assets/skybox/blood/right.tga");
-  faces.push_back("assets/skybox/blood/left.tga");
-  faces.push_back("assets/skybox/blood/up.tga");
-  faces.push_back("assets/skybox/blood/bottom.tga");
-  faces.push_back("assets/skybox/blood/back.tga");
-  faces.push_back("assets/skybox/blood/front.tga");
+  if (identifiant == 1)
+  {
+    faces.push_back("assets/skybox/hw_nightsky/right.tga");
+  faces.push_back("assets/skybox/hw_nightsky/left.tga");
+  faces.push_back("assets/skybox/hw_nightsky/up.tga");
+  faces.push_back("assets/skybox/hw_nightsky/bottom.tga");
+  faces.push_back("assets/skybox/hw_nightsky/back.tga");
+  faces.push_back("assets/skybox/hw_nightsky/front.tga");
+  }
+  else if(identifiant == 2){
+    faces.push_back("assets/skybox/blood/right.tga");
+    faces.push_back("assets/skybox/blood/left.tga");
+    faces.push_back("assets/skybox/blood/up.tga");
+    faces.push_back("assets/skybox/blood/bottom.tga");
+    faces.push_back("assets/skybox/blood/back.tga");
+    faces.push_back("assets/skybox/blood/front.tga");
+
+  }
+  else if(identifiant == 3){
+    faces.push_back("assets/skybox/blood/right.tga");
+    faces.push_back("assets/skybox/blood/left.tga");
+    faces.push_back("assets/skybox/blood/up.tga");
+    faces.push_back("assets/skybox/blood/bottom.tga");
+    faces.push_back("assets/skybox/blood/back.tga");
+    faces.push_back("assets/skybox/blood/front.tga");
+
+  }
+  
 	skyboxTexture = loadCubemap(faces); 
 
 	
