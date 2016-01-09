@@ -5,7 +5,7 @@
 namespace glimac {
 
     TrackballCamera::TrackballCamera() {
-         m_fDistance = 20.0;
+         m_fDistance = 0.0;
          m_fAngleX = 0.0;
          m_fAngleY = 0.0;
     }
@@ -29,16 +29,11 @@ namespace glimac {
     }
 
     void TrackballCamera::resetPositionInit(int identifiant){
-        if(identifiant==3){
-             m_fDistance = 20.0;   
-             m_fAngleX = 0.0;
-             m_fAngleY = -0.3;
-        }
-        else{
-            m_fDistance = 20.0;   
-             m_fAngleX = 0.0;
-             m_fAngleY = 0.0;
-        }
+  
+        m_fDistance = 0.0;   
+        m_fAngleX = 0.0;
+        m_fAngleY = 0.0;
+        
     }
 
 
@@ -80,6 +75,7 @@ namespace glimac {
     }
 
     void TrackballCamera::resetm_fAngleY(float angle){
+      //std::cout<<"jfjfjf"<<angle<<std::endl;
         m_fAngleY = angle;
     }
     glm::mat4 TrackballCamera::getViewMatrix() const{
@@ -90,7 +86,9 @@ namespace glimac {
         glm::mat4 matrixrotateLeft = glm::rotate( MatrixId, m_fAngleX, glm::vec3(0, 1, 0) ); //Axe x
         glm::mat4 matrixrotateUp = glm::rotate( MatrixId, m_fAngleY, glm::vec3(1, 0, 0) ); //Axe y
 
-        return matrixrotateLeft * matrixrotateUp * matrixMoveFront;
+        // std::cout<<matrixrotateUp<<std::endl;
+        // std::cout<<m_fAngleY<<std::endl;
+        return matrixrotateLeft * matrixrotateUp*matrixMoveFront;
     }
 
 }
