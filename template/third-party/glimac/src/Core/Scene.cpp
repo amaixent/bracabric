@@ -112,9 +112,6 @@ void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight
     {   
         if(tabTas[i].getlistObjetSize()!= 0){
             tabTas[i].Draw(shader);
-            // Scène 1 : color_position.fs.glsl
-            vec3 temp3 = tabTas[i].getPositionTas();
-            glUniform1f(glGetUniformLocation(shader.Program , "uIdTas"), tabTas[i].getIdTas());
         }
             
     }

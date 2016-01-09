@@ -29,11 +29,9 @@ namespace glimac {
     }
 
     void TrackballCamera::resetPositionInit(int identifiant){
-  
-        m_fDistance = 0.0;   
+        m_fDistance = 0.0;  
         m_fAngleX = 0.0;
         m_fAngleY = 0.0;
-        
     }
 
 

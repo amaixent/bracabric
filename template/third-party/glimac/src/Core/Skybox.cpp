@@ -10,15 +10,15 @@ using namespace glimac;
 
 void Skybox::loadSkybox(int identifiant,string fichierSkybox){
 
-  	/*if (identifiant == 3)
-    {
-           skyboxShader.loadShader("projet/shaders/skybox_lampe_torche.vs.glsl", "projet/shaders/skybox_lampe_torche.fs.glsl");
+  	// if (identifiant == 3)
+   //  {
+   //         skyboxShader.loadShader("projet/shaders/skybox_lampe_torche.vs.glsl", "projet/shaders/skybox_lampe_torche.fs.glsl");
 
-    }
-    else{*/
+   //  }
+   //  else{
            skyboxShader.loadShader("projet/shaders/skybox.vs.glsl", "projet/shaders/skybox.fs.glsl");
 
-    //}
+    // }
  
 	GLfloat skyboxVertices[] = {
     // Positions          
@@ -131,8 +131,7 @@ void Skybox::Draw(TrackballCamera camera,float screenWidth, float screenHeight, 
   skyboxShader.Use();
 
   //Mouvement de la skybox
-  if(idScene == 3) view = glm::translate(view, glm::vec3(0,20,-30));
-  else view = glm::translate(view, glm::vec3(0,0,-30));
+  view = glm::translate(view, glm::vec3(0,0,-30));
 
   glUniformMatrix4fv(glGetUniformLocation(this->skyboxShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
   glUniformMatrix4fv(glGetUniformLocation(this->skyboxShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
