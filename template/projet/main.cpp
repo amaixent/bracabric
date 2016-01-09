@@ -67,13 +67,13 @@ int main(int argc, char** argv) {
                 //if (windowManager.isKeyPressed(SDLK_z)) myWorld.trackCam.moveFront(-0.1);
             if (windowManager.isKeyPressed(SDLK_z)){
                 if(myWorld.getSceneId() == 3){
-                    if((myWorld.trackCam.getm_fAngleX()) == 0 && (std::abs(myWorld.trackCam.getm_fAngleY()+0.2) <=0.01)){
+                    if((myWorld.trackCam.getm_fAngleX()) == 0 && (std::abs(myWorld.trackCam.getm_fAngleY()+0.3) <=0.01)){
                         myWorld.trackCam.moveFront(-0.1);
                     }
 
-                    if((myWorld.trackCam.getm_fAngleX() != 0) || (std::abs(myWorld.trackCam.getm_fAngleY()+0.2) >0.01)) {
+                    if((myWorld.trackCam.getm_fAngleX() != 0) || (std::abs(myWorld.trackCam.getm_fAngleY()+0.3) >0.01)) {
                         myWorld.trackCam.resetm_fAngleX();
-                        myWorld.trackCam.resetm_fAngleY(-0.20);
+                        myWorld.trackCam.resetm_fAngleY(-0.3);
                     }
                 }
                 else {

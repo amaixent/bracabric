@@ -32,7 +32,7 @@ namespace glimac {
 				//this->panneauDebut.fermeturePanneau();
 			}
 			
-			trackCam.resetPositionInit();
+			trackCam.resetPositionInit(identifiant);
 		}	
 	}
 

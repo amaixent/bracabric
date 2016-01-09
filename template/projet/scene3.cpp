@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
                 if (windowManager.isKeyPressed(SDLK_DOWN)) trackCam.rotateUp(0.5);
                 if (windowManager.isKeyPressed(SDLK_LEFT)) trackCam.rotateLeft(-0.5);
                 if (windowManager.isKeyPressed(SDLK_RIGHT)) trackCam.rotateLeft(0.5);
-
+            }
 
         /*********************************
          * HERE SHOULD COME THE RENDERING CODE
