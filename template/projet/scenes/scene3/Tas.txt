@@ -8,11 +8,11 @@
 # house
 #1 projet/scenes/scene3/house.txt 0.0 0.0 0.0 10.0 10.0 10.0 0.0 0.0 0.0
 # waffle
-#2 projet/scenes/scene3/waffle.txt 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 
+2 projet/scenes/scene3/waffle.txt 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 
 # globe
 #3 projet/scenes/scene3/globe.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 0.0 0.0 
 # camel
-#4 projet/scenes/scene3/camel.txt 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 
+4 projet/scenes/scene3/camel.txt 0.0 0.0 0.0 1.0 1.0 1.0 0.0 0.0 0.0 
 # bird
 #5 projet/scenes/scene3/bird.txt 0.0 0.0 0.0 2.0 2.0 2.0 0.0 0.0 0.0 
 # extintor

@@ -15,7 +15,7 @@ namespace glimac {
         LoadTasFromFile(fichierTas);
         id = identifiant;
         idTrajectoire = 0;
-        mySkybox.loadSkybox(fichierSkybox); 
+        mySkybox.loadSkybox(identifiant, fichierSkybox); 
     }
 
     Scene::~Scene(){
@@ -39,7 +39,7 @@ void Scene::chargeScene(int identifiant, string fichierVs,string fichierFs,strin
     LoadTasFromFile(fichierTas);
     id = identifiant;
     idTrajectoire = 0;
-    mySkybox.loadSkybox(fichierSkybox);
+    mySkybox.loadSkybox(identifiant, fichierSkybox);
 
 }   
 

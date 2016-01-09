@@ -30,7 +30,7 @@ public:
 	Skybox();
     ~Skybox();
 
-    void loadSkybox(string fichierSkybox);
+    void loadSkybox(int identifiant, string fichierSkybox);
     void Draw(TrackballCamera camera,float screenWidth, float screenHeight);
     void changeSkybox();
 };

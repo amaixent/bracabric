@@ -8,10 +8,18 @@ using namespace glimac;
 
 	}
 
-void Skybox::loadSkybox(string fichierSkybox){
+void Skybox::loadSkybox(int identifiant,string fichierSkybox){
 
-  	skyboxShader.loadShader("projet/shaders/skybox.vs.glsl", "projet/shaders/skybox.fs.glsl");
+  	if (identifiant == 3)
+    {
+           skyboxShader.loadShader("projet/shaders/skybox_lampe_torche.vs.glsl", "projet/shaders/skybox_lampe_torche.fs.glsl");
 
+    }
+    else{
+           skyboxShader.loadShader("projet/shaders/skybox.vs.glsl", "projet/shaders/skybox.fs.glsl");
+
+    }
+ 
 	GLfloat skyboxVertices[] = {
     // Positions          
     -40.0f,  40.0f, -40.0f,
