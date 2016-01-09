@@ -10,15 +10,15 @@ using namespace glimac;
 
 void Skybox::loadSkybox(int identifiant){
 
-  	// if (identifiant == 3)
-   //  {
-   //         skyboxShader.loadShader("projet/shaders/skybox_lampe_torche.vs.glsl", "projet/shaders/skybox_lampe_torche.fs.glsl");
+  	if (identifiant == 3)
+    {
+           skyboxShader.loadShader("projet/shaders/skybox_lampe_torche.vs.glsl", "projet/shaders/skybox_lampe_torche.fs.glsl");
 
-   //  }
-   //  else{
+    }
+    else{
            skyboxShader.loadShader("projet/shaders/skybox.vs.glsl", "projet/shaders/skybox.fs.glsl");
 
-    // }
+    }
  
 	GLfloat skyboxVertices[] = {
     // Positions          
