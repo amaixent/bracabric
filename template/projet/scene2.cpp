@@ -40,9 +40,7 @@ int main(int argc, char** argv) {
      *********************************/
     //Initialisation de la scene
     Scene maScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt");
-    //Initialisation Trajectoire et Camera
-    mat3 positions = mat3(vec3(0.0f, 0.0f, 0.0f),vec3(0.0f, 0.0f, 5.0f),vec3(0.0f, 0.0f, 10.0f)); 
-    Trajectoire trajectoire(1, positions);
+
     //FreeflyCamera freefly;
     TrackballCamera trackCam;
  
@@ -98,7 +96,7 @@ int main(int argc, char** argv) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
        
-        maScene.Draw(trajectoire,trackCam,screenWidth,screenHeight);
+        maScene.Draw(trackCam,screenWidth,screenHeight);
 
 
 

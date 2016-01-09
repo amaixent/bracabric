@@ -2,6 +2,7 @@
 
 #include "Core/Scene.hpp"
 #include "Core/Skybox.hpp"
+#include "Core/Panneau.hpp"
 namespace glimac {
 
 class Monde
@@ -10,15 +11,16 @@ private:
 	int nbScenes;
 	Scene myScene;
 	Skybox mySkybox;
+	Panneau panneauDebut;
 
 	
 public:
-	TrackballCamera camera;
+	TrackballCamera trackCam;
 	Monde();
 	~Monde();
 
+	int getSceneId();
 	void chargeScene(int identifiant);
-	void Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
-	/* data */
+	void Draw( GLuint screenWidth, GLuint screenHeight);
 	};
 }

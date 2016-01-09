@@ -1,9 +1,7 @@
 #pragma once
 #include "Core/Tas.hpp"
 #include "Shader.hpp"
-#include <Core/Trajectoire.hpp>
 #include <Core/Skybox.hpp>
-#include <Camera/FreeflyCamera.hpp>
 #include <Camera/TrackballCamera.hpp>
 
 #include "glimac/glm.hpp"
@@ -33,7 +31,7 @@ public:
 	void changeScene();
 	void chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierSkybox);
 	void LoadTasFromFile(string fichierTas);
-	void Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
+	void Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
 
 	/* data */
 };

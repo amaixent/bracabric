@@ -18,4 +18,3 @@
 12 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -300.0
 13 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -340.0
 #
-#

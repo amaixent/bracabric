@@ -10,20 +10,20 @@
 1 projet/scenes/scene2/cell.txt 10.0 25.0 -50.0 1.0 1.0 1.0 0.0 0.0 0.0 
 #
 # Tas3 : Psyché FLower Venue for little feet
-2 projet/scenes/scene2/assiette.txt 0.0 -3.0 10.0 0.5 0.5 0.5 0.0 0.0 0.0
+#2 projet/scenes/scene2/assiette.txt 0.0 -3.0 10.0 0.5 0.5 0.5 0.0 0.0 0.0
 #
 # Tas4 : tas de fence
-3 projet/scenes/scene2/fence.txt 0.0 0.0 -20.0 1.0 1.0 1.0 0.0 0.0 0.0
+#3 projet/scenes/scene2/fence.txt 0.0 0.0 -20.0 1.0 1.0 1.0 0.0 0.0 0.0
 #
 # Tas5 : bambi !
-4 projet/scenes/scene2/faon.txt 0.0 0.0 -4.0 1.0 1.0 1.0 0.0 0.0 0.0 
+#4 projet/scenes/scene2/faon.txt 0.0 0.0 -4.0 1.0 1.0 1.0 0.0 0.0 0.0 
 #
 # Tas6 : The Queen of the GALA
-5 projet/scenes/scene2/figurine.txt 0.0 0.0 0.0 0.9 0.9 0.9 1.0 0.0 0.0 
+#5 projet/scenes/scene2/figurine.txt 0.0 0.0 0.0 0.9 0.9 0.9 1.0 0.0 0.0 
 #
 # Tas5 : Have a drink 
-6 projet/scenes/scene2/beer2.txt -5.0 -7.0 -0.0 0.3 0.3 0.3 0.0 0.0 0.0 
+#6 projet/scenes/scene2/beer2.txt -5.0 -7.0 -0.0 0.3 0.3 0.3 0.0 0.0 0.0 
 #
 # Tas5 : Have a drink 
-7 projet/scenes/scene2/beer.txt -7.0 -5.0 -0.0 0.3 0.3 0.3 0.0 0.0 0.0 
+#7 projet/scenes/scene2/beer.txt -7.0 -5.0 -0.0 0.3 0.3 0.3 0.0 0.0 0.0 
 #

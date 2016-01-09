@@ -83,7 +83,7 @@ void Scene::LoadTasFromFile(string fichierTas){
 
 }
 
-void Scene::Draw(Trajectoire trajcam, TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
+void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
 
     mySkybox.Draw(camera,screenWidth,screenHeight);
 

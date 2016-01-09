@@ -10,7 +10,6 @@
 #include <iostream>
 #include <vector>
 
-#include <Core/Trajectoire.hpp>
 #include <Camera/FreeflyCamera.hpp>
 #include <Camera/TrackballCamera.hpp>
 #include "Shader.hpp"
