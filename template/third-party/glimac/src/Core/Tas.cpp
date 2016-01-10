@@ -102,6 +102,10 @@ int Tas::getlistObjetSize(){
 	return listObjet.size();
 }
 
+Objet3D Tas::getObjetBase(){
+    return objetBase;
+}
+
 void Tas::Draw(Shader shader){
 	//Draw the loaded model
 
@@ -126,6 +130,9 @@ vec3 Tas::getPositionTas(){
 
 int Tas::getIdTas(){
     return id;
+}
+float Tas::getZ(){
+    return position[2];
 }
 void Tas::changeScene(){
     listObjet.clear();

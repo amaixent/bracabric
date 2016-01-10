@@ -21,7 +21,7 @@ private:
 	int width, height;
 	Shader panneauShader;
     GLuint panneauTexture;
-    GLuint panneauVAO, panneauVBO;
+    GLuint panneauVAO, panneauVBO, panneauEBO;
     GLuint loadTexture(string cheminTexture);
 
 	

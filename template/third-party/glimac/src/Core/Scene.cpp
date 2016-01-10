@@ -104,7 +104,8 @@ void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight
     
     for (int i = 0; i < tabTas.size(); ++i)
     {   
-        if(tabTas[i].getlistObjetSize()!= 0){
+        if((tabTas[i].getlistObjetSize()!= 0) && camera.distance(tabTas[i].getObjetBase(), tabTas[i].getZ())){
+            //std::cout<<tabTas[i].getIdTas()<<std::endl;
             tabTas[i].Draw(shader);
         }
             

@@ -140,8 +140,6 @@ void Skybox::Draw(TrackballCamera camera,float screenWidth, float screenHeight, 
   glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
   // Draw skybox first
 
-  
-  
   glDepthMask(GL_FALSE);// Remember to turn depth writing off
   glm::mat4 view = camera.getViewMatrix();
   skyboxShader.Use();

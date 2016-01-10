@@ -29,6 +29,8 @@ public:
 	int getlistObjetSize();
 	vec3 getPositionTas();
 	int getIdTas();
+	Objet3D getObjetBase();
+	float getZ();
 
 	void Draw(Shader shader);
 	void changeScene();

@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
     //Initialisation du monde
-    Monde myWorld;
+    Monde myWorld(screenWidth,screenHeight);
 
     //FreeflyCamera freefly;
     //TrackballCamera trackCam;
@@ -88,6 +88,8 @@ int main(int argc, char** argv) {
             if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-0.5);
             if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(0.5);
 
+            if (windowManager.isKeyPressed(SDLK_SPACE)) myWorld.changePause();
+
             if (windowManager.isKeyPressed(SDLK_v)) myWorld.chargeScene(1);
             if (windowManager.isKeyPressed(SDLK_b)) myWorld.chargeScene(2);
             if (windowManager.isKeyPressed(SDLK_n)) myWorld.chargeScene(3);
@@ -122,7 +124,7 @@ int main(int argc, char** argv) {
 
        
         
-        myWorld.Draw(screenWidth,screenHeight);
+        myWorld.Draw();
 
 
 

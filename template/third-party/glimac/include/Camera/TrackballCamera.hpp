@@ -4,7 +4,8 @@
 #include <SDL/SDL.h>
 #include <time.h>
 #include "glimac/glm.hpp"
-#pragma once
+#include <Core/Objet3D.hpp>
+
 
 namespace glimac {
 
@@ -34,7 +35,11 @@ public:
     void rotateUp(float degrees); //permettant de tourner verticalement autour du centre de vision.
     void retourSlowMotion(float degrees);
     
+
     glm::mat4 getViewMatrix() const;
+
+    bool distance(Objet3D o,float tasPositionZ);
+
 };
 
 }

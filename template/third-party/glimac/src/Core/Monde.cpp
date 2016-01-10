@@ -1,9 +1,15 @@
 #include "Core/Monde.hpp"
 
 namespace glimac {
-	Monde::Monde(){
-		//panneauDebut.loadPanneau("assets/panneau/debut_scene.jpg");
+	Monde::Monde(GLuint width,GLuint height){
+		
+		panneauDebut.loadPanneau("assets/panneau/debut_scene.jpg");
+		panneauLoading.loadPanneau("assets/panneau/loading.jpg");
+		pause = true;
+		screenWidth = width;
+		screenHeight = height;
 		chargeScene(1);
+
 	}
 
 
@@ -12,8 +18,10 @@ namespace glimac {
 	}
 
 	void Monde::chargeScene(int identifiant){
+		//this->panneauLoading.Draw(this->trackCam,screenWidth,screenHeight);
 		if (identifiant != myScene.getId())
-		{	if (identifiant ==1)
+		{	
+			if (identifiant ==1)
 			{
 				this->myScene.chargeScene(1,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene1/Tas.txt");
 			}
@@ -27,7 +35,8 @@ namespace glimac {
 			}
 			else if (identifiant ==0){
 				this->myScene.changeScene();
-				//this->panneauDebut.fermeturePanneau();
+				panneauDebut.fermeturePanneau();
+				panneauLoading.fermeturePanneau();
 			}
 			
 			trackCam.resetPositionInit(identifiant);
@@ -37,8 +46,27 @@ namespace glimac {
 	int Monde::getSceneId(){
 		return myScene.getId();
 	}
-	void Monde::Draw(GLuint screenWidth, GLuint screenHeight){
-		myScene.Draw(this->trackCam,screenWidth,screenHeight);
+
+	//Moyen détourné de mettre le jeu en pause parce que si on appuie sur espace, 
+	//la fonction est appelée plusieurs fois.
+	void Monde::changePause(){
+		if (pause == 3)
+		{
+			pause = 0;
+		}
+		else{
+			pause++;
+		}
+	}
+	void Monde::Draw(){
+		if (pause != 3)
+		{
+			this->panneauDebut.Draw(this->trackCam,screenWidth,screenHeight);
+		}
+		else{
+			myScene.Draw(this->trackCam,screenWidth,screenHeight);
+		}
+		
 	}
 
 }

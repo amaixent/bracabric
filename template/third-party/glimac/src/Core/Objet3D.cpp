@@ -103,12 +103,4 @@ namespace glimac {
 	void Objet3D::changeScene(){
 		model.changeScene();
 	}
-
-	// void Objet3D::seDeplacer(){
-
-	// }
-
-	// void Objet3D::action(){
-
-	// }
 }
