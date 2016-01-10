@@ -27,6 +27,8 @@ public:
 
     // Return the time in seconds
     float getTime() const;
+
+    SDL_Window* getWindow() const;
 };
 
 }
