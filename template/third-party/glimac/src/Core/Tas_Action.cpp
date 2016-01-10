@@ -20,25 +20,17 @@ if ((emplacement[19] == '1') && (idTas == 5))// on veut faire bouger le Tas 5 de
 		//std::cout << T[1] << std::endl;
 		if (T[1]<=0.7) {
 		//std::cout << "coucou" << std::endl;
-			if ((int(T[1]*100)%2)==0) {
-				T-=vec3(0.004,0.004,0.004);
-			}
-			else {
-				T+=vec3(0.004,0.004,0.004);
-			}
-			if (T[1]<=0.0004) {
-				T+=vec3(0.001,0.001,0.001);
-			}
+			if ((int(T[1]*100)%2)==0) T-=vec3(0.004,0.004,0.004);
+			else  T+=vec3(0.004,0.004,0.004);
+			if (T[1]<=0.00004) T+=vec3(0.001,0.001,0.001);
 			o->setPosition(T);
 		}
-		else {
-			o->setPosition(vec3(0.004,0.004,0.004));
-		}
+		else o->setPosition(vec3(0.004,0.004,0.004));
 	}
 }
 
 void Scene2_MouvementHippo(int idTas, string emplacement, Objet3D* o){
-	if ((emplacement[19]='2') && (idTas == 0)) {
+	if ((emplacement[19] == '2') && (idTas == 0)) {
 		vec3 R = o->getangleRotation();
 		int id= o->getId();
 		if (id%2==1) R[1]-=0.8;
@@ -53,7 +45,7 @@ void Scene2_MouvementHippo(int idTas, string emplacement, Objet3D* o){
 }
 
 void Scene2_MouvementCellRain(int idTas, string emplacement, Objet3D* o){
-	if ((emplacement[19]='2') && (idTas == 1)) {
+	if ((emplacement[19] == '2') && (idTas == 1)) {
 		vec3 R = o->getangleRotation();
 		int id= o->getId();
 		if (id%2==1) R[1]-=0.8;
@@ -66,7 +58,7 @@ void Scene2_MouvementCellRain(int idTas, string emplacement, Objet3D* o){
 }
 
 void Scene2_MouvementGalaxieQueen(int idTas, string emplacement, Objet3D* o){
-	if ((emplacement[19]='2') && (idTas == 5)) {
+	if ((emplacement[19] == '2') && (idTas == 5)) {
 		vec3 P = o->getposition();
 		bool identification = 0;
 		

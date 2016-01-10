@@ -12,7 +12,7 @@ using namespace glimac;
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
-    GLuint screenWidth = 1500, screenHeight = 1100;
+    GLuint screenWidth = 800, screenHeight = 600;
 
     SDLWindowManager windowManager(screenWidth, screenHeight, "Bracabric");
 
@@ -94,7 +94,7 @@ int main(int argc, char** argv) {
             if (windowManager.isKeyPressed(SDLK_b)) myWorld.chargeScene(2);
             if (windowManager.isKeyPressed(SDLK_n)) myWorld.chargeScene(3);
 
-            if (windowManager.isKeyPressed(SDLK_q)) done = true; //pour pouvoir quitter si jamais il y a un problème avec le plein écran
+            if (windowManager.isKeyPressed(SDLK_e)) done = true; //pour pouvoir quitter si jamais il y a un problème avec le plein écran
 
             //test sur un événement
             if(e.type == SDL_WINDOWEVENT_SIZE_CHANGED){
