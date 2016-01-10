@@ -8,6 +8,7 @@ namespace glimac {
          m_fDistance = 0.0;
          m_fAngleX = 0.0;
          m_fAngleY = 0.0;
+         //isLookingAilleurs = 0;
     }
 
     TrackballCamera::~TrackballCamera() {
@@ -15,7 +16,11 @@ namespace glimac {
 
     void TrackballCamera::moveFront(float delta) {
          m_fDistance += delta;
-         
+         //      std::cout<<time(NULL)/14000<<std::endl;
+          //if(m_fAngleY != 0.0) isLookingAilleurs = 1;
+        //else if(m_fAngleY == 0.0) isLookingAilleurs = 0;
+          //std::cout<<"isLookingAilleurs"<<isLookingAilleurs<<std::endl;
+
         /*On peut avancer et reculer mais on ne peut pas aller derrière le point de départ ! */
         /****Salut, boucle à désactiver pour placer les objets 3D****/
         // if (m_fDistance>0.0)
@@ -53,7 +58,7 @@ namespace glimac {
     }
 
     void TrackballCamera::resetm_fAngleX(){
-        m_fAngleX = 0;
+        m_fAngleX = 0.0;
     }
 
     void TrackballCamera::rotateUp(float degrees){
@@ -72,9 +77,33 @@ namespace glimac {
       return m_fAngleY;
     }
 
-    void TrackballCamera::resetm_fAngleY(float angle){
-      //std::cout<<"jfjfjf"<<angle<<std::endl;
-        m_fAngleY = angle;
+    void TrackballCamera::resetm_fAngleY(){
+        m_fAngleY = 0.0;
+    }
+    void TrackballCamera::retourSlowMotion(float degrees){
+    
+
+          if(m_fAngleX>0.0)
+          m_fAngleX -= degrees / 180 * M_PI;
+        else m_fAngleX += degrees / 180 * M_PI;
+
+        // if(isLookingAilleurs == 1){
+        //     if(m_fAngleY>0.0){
+        //        std::cout<<"m_fAngleY"<<std::endl;
+
+        //         m_fAngleY-=0.001;
+        
+        //     }
+        //     else {
+              
+        //         m_fAngleY+=0.001;
+        //        std::cout<<"coucou2"<<std::endl;
+
+        //     }
+        //           std::cout<<m_fAngleY<<std::endl;
+
+        // if(m_fAngleY=0.0) isLookingAilleurs=0;
+        // }
     }
     glm::mat4 TrackballCamera::getViewMatrix() const{
 

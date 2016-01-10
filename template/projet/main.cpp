@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
 
                 if((myWorld.trackCam.getm_fAngleX() != 0) || (myWorld.trackCam.getm_fAngleY() != 0)) {
                         myWorld.trackCam.resetm_fAngleX();
-                        myWorld.trackCam.resetm_fAngleY(0.0);
+                        myWorld.trackCam.resetm_fAngleY();
                 }
             } 
                 if (windowManager.isKeyPressed(SDLK_s)) {

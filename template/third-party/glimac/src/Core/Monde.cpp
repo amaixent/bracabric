@@ -3,7 +3,7 @@
 namespace glimac {
 	Monde::Monde(){
 		//panneauDebut.loadPanneau("assets/panneau/debut_scene.jpg");
-		chargeScene(3);
+		chargeScene(1);
 	}
 
 

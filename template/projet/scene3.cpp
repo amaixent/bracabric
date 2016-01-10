@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
                    }
                     if((trackCam.getm_fAngleX() != 0) || (std::abs(trackCam.getm_fAngleY()+0.3) >0.01)) {
                         trackCam.resetm_fAngleX();
-                        trackCam.resetm_fAngleY(-0.3);
+                        trackCam.resetm_fAngleY();
                    }
                }                if (windowManager.isKeyPressed(SDLK_s)) {
                     trackCam.moveFront(0.1);

@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <SDL/SDL.h>
+#include <time.h>
 #include "glimac/glm.hpp"
 #pragma once
 
@@ -15,6 +16,7 @@ private:
     float m_fAngleY; //l'angle effectué par la caméra autour de l'axe y de la scène (rotation vers la gauche ou vers la droite)
 
 public:
+    bool isLookingAilleurs;
 
     TrackballCamera(); //Constructeur
    ~TrackballCamera(); //Destructeur
@@ -28,9 +30,10 @@ public:
     void resetm_fAngleX();
 
     float getm_fAngleY();
-    void resetm_fAngleY(float angle);
+    void resetm_fAngleY();
     void rotateUp(float degrees); //permettant de tourner verticalement autour du centre de vision.
-    void chemin();
+    void retourSlowMotion(float degrees);
+    
     glm::mat4 getViewMatrix() const;
 };
 

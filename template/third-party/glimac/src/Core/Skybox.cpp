@@ -77,12 +77,12 @@ void Skybox::loadSkybox(int identifiant){
   faces.push_back("assets/skybox/hw_nightsky/front.tga");
   }
   else if(identifiant == 2){
-    faces.push_back("assets/skybox/blood/right.tga");
-    faces.push_back("assets/skybox/blood/left.tga");
-    faces.push_back("assets/skybox/blood/up.tga");
-    faces.push_back("assets/skybox/blood/bottom.tga");
-    faces.push_back("assets/skybox/blood/back.tga");
-    faces.push_back("assets/skybox/blood/front.tga");
+    faces.push_back("assets/skybox/mp_crimimpact/right.tga");
+    faces.push_back("assets/skybox/mp_crimimpact/left.tga");
+    faces.push_back("assets/skybox/mp_crimimpact/up.tga");
+    faces.push_back("assets/skybox/mp_crimimpact/bottom.tga");
+    faces.push_back("assets/skybox/mp_crimimpact/back.tga");
+    faces.push_back("assets/skybox/mp_crimimpact/front.tga");
 
   }
   else if(identifiant == 3){
