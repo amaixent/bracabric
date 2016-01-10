@@ -2,7 +2,7 @@
 # id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
 #
 #
-# cell
+# Galactic cell raining
 0 assets/models/scene2/cell/cell_3DS.3DS  0.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 
 1 assets/models/scene2/cell/cell_3DS.3DS  13.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 
 2 assets/models/scene2/cell/cell_3DS.3DS  26.0 0.0 -1.0 0.08 0.08 0.08 0.0 0.0 0.0 

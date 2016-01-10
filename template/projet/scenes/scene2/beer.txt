@@ -2,19 +2,21 @@
 # id chemin/objet.obj px py pz sx sy sz angleRx angleRy angleRz
 #
 #
-# beer
-0 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 0.0
-1 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -30.0
-2 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -45.0
-3 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -80.0
-4 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -95.0
-5 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -130.0
-6 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -145.0
-7 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -185.0
-8 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -200.0
-9 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -235.0
-10 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -250.0
-11 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -285.0
-12 assets/models/scene2/beer/Bottlebeer1N261113.3DS  -3.0 -3.75 -12.0 1.0 1.0 1.0 0.0 0.0 -300.0
-13 assets/models/scene2/beer/Bottlebeer1N261113.3DS  0.0 -1.75 -3.0 0.4 0.4 0.4 0.0 0.0 -340.0
+# beer2
+0 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  10.0 2.5 -0.8 0.3 0.3 0.3 0.0 0.0 0.0 
+1 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  13.0 2.5 -0.8 0.3 0.3 0.3 0.0 0.0 0.0 
+2 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  16.0 2.5 -0.8 0.3 0.3 0.3 0.0 0.0 0.0 
+3 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  11.5 2.5 -5.0 0.3 0.3 0.3 0.0 0.0 0.0 
+4 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  14.5 2.5 -5.0 0.3 0.3 0.3 0.0 0.0 0.0 
+5 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  12.75 2.5 -10.0 0.3 0.3 0.3 0.0 0.0 0.0 
+#
+6 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  23.0 10.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+7 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  5.0 10.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+8 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  6.0 14.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+9 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  22.0 14.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+10 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  8.0 17.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+11 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  20.0 17.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+12 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  17.0 20.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+14 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  11.0 20.5 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
+13 assets/models/scene2/beer2/Bottlebeer1N261113.3DS  14.0 22 -1.0 0.4 0.4 0.4 0.0 0.0 0.0 
 #

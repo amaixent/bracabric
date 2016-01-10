@@ -37,6 +37,57 @@ if ((emplacement[19] == '1') && (idTas == 5))// on veut faire bouger le Tas 5 de
 	}
 }
 
+void Scene2_MouvementHippo(int idTas, string emplacement, Objet3D* o){
+	if ((emplacement[19]='2') && (idTas == 0)) {
+		vec3 R = o->getangleRotation();
+		int id= o->getId();
+		if (id%2==1) R[1]-=0.8;
+		
+
+		R[0]+=0.8;
+		R[1]-=0.8;
+		R[2]-=0.8;
+		
+		o->setRotation(R);
+	}
+}
+
+void Scene2_MouvementCellRain(int idTas, string emplacement, Objet3D* o){
+	if ((emplacement[19]='2') && (idTas == 1)) {
+		vec3 R = o->getangleRotation();
+		int id= o->getId();
+		if (id%2==1) R[1]-=0.8;
+		if (id%2==0){
+			R[1]+=0.4;
+			R[2]+=0.4;
+		} 
+		o->setRotation(R);
+	}
+}
+
+void Scene2_MouvementGalaxieQueen(int idTas, string emplacement, Objet3D* o){
+	if ((emplacement[19]='2') && (idTas == 5)) {
+		vec3 P = o->getposition();
+		bool identification = 0;
+		
+		if(identification == 0) {
+			P[1]-= 0.01;
+			if(P[1]<=-5.50){
+				identification = 1;
+			} 
+			o->setPosition(P);
+		}
+		if(identification == 1) {
+			P[1]+= 0.01;
+			if(P[1]>=-2.75) {
+				identification = 0;
+			}
+			o->setPosition(P);
+		}
+		
+	}
+}
+
 void Scene3_MouvementBird(int idTas, string emplacement,Objet3D* o){
 	if ((emplacement[19] == '3') && (idTas == 5))// on veut faire bouger le Tas 5 de la scène 3
 	{
@@ -99,7 +150,10 @@ void Scene3_MouvementWaffle(int idTas, string emplacement,Objet3D* o){
 void ActionTas(int idTas, string emplacement,Objet3D* o){
 	Scene1_Mouvementd12(idTas, emplacement, o);
 	Scene1_MouvementSphere(idTas, emplacement,o);
+	Scene2_MouvementHippo(idTas, emplacement, o);
+	Scene2_MouvementCellRain(idTas, emplacement, o);
 	Scene3_MouvementBird(idTas, emplacement,o);
 	Scene3_MouvementCamel(idTas, emplacement, o);
 	Scene3_MouvementWaffle(idTas, emplacement, o);
+	Scene2_MouvementGalaxieQueen(idTas, emplacement, o);
 }

@@ -6,7 +6,7 @@
 # Tas1 : Seahorse mega star 
 0 projet/scenes/scene2/seahorse.txt -15.0 15.0 -39.0 1.0 1.0 1.0 0.0 30.0 0.0
 #
-# Tas2 : Cell raining 
+# Tas2 : Galactic cells raining 
 1 projet/scenes/scene2/cell.txt 10.0 25.0 -65.0 1.0 1.0 1.0 0.0 0.0 0.0 
 #
 # Tas3 : Psyché FLower Venue for little feet
@@ -22,5 +22,5 @@
 5 projet/scenes/scene2/figurine.txt 0.0 -3.0 -19.0 1.0 1.0 1.0 1.0 0.0 0.0 
 #
 # Tas5 : Have a drink 
-6 projet/scenes/scene2/beer2.txt -5.0 -7.0 -19.0 0.3 0.3 0.3 0.0 0.0 0.0 
+6 projet/scenes/scene2/beer.txt -4.3 -5.9 -19.0 0.3 0.3 0.3 0.0 0.0 0.0 
 #

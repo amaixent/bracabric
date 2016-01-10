@@ -12,7 +12,7 @@ using namespace glimac;
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
-    GLuint screenWidth = 800, screenHeight = 600;
+    GLuint screenWidth = 1500, screenHeight = 1100;
 
     SDLWindowManager windowManager(screenWidth, screenHeight, "Bracabric");
 
@@ -83,10 +83,10 @@ int main(int argc, char** argv) {
             //if (windowManager.isKeyPressed(SDLK_q)) trackCam.moveLeft(-0.1);
             //if (windowManager.isKeyPressed(SDLK_d)) trackCam.moveLeft(0.1);
             
-            if (windowManager.isKeyPressed(SDLK_UP)) myWorld.trackCam.rotateUp(-0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
-            if (windowManager.isKeyPressed(SDLK_DOWN)) myWorld.trackCam.rotateUp(0.5);
-            if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-0.5);
-            if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(0.5);
+            if (windowManager.isKeyPressed(SDLK_UP)) myWorld.trackCam.rotateUp(-0.7); //avec la souris on a plus d'aisance, ces touches sont un plus
+            if (windowManager.isKeyPressed(SDLK_DOWN)) myWorld.trackCam.rotateUp(0.7);
+            if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-0.7);
+            if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(0.7);
 
             if (windowManager.isKeyPressed(SDLK_SPACE)) myWorld.changePause();
 
