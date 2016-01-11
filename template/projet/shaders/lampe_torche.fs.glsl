@@ -30,13 +30,12 @@ uniform sampler2D texture_diffuse1;
  vec4 aura(){
 
  	float distance =  sqrt((Position_vs[0])*(Position_vs[0]) + (Position_vs[1])*(Position_vs[1]));
- 	return vec4(1/distance,1/distance,1/distance,1);
+ 	return vec4(5/distance,5/distance,5/distance,1);
  	
  }
 
 void main() {
 
 	color = vec4(texture(texture_diffuse1, TexCoords_vs))*vec4(blinnPhong(),1)*aura();
-	//color=vec4(texture(texture_diffuse1, TexCoords_vs))*vec4(blinnPhong(),1);
 
 }

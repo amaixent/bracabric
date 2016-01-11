@@ -8,6 +8,8 @@ namespace glimac {
 		screenWidth = width;
 		screenHeight = height;
 		chargeScene(1,windowManager);
+		pause = 1;
+		changePause();
 
 	}
 
@@ -39,8 +41,8 @@ namespace glimac {
 			}
 			
 			trackCam.resetPositionInit(identifiant);
-			pause = 1;
-			changePause();
+			
+			
 		}	
 	}
 
@@ -75,7 +77,8 @@ namespace glimac {
 			this->panneauDebut.Draw(this->trackCam,screenWidth,screenHeight);
 		}
 		else{
-			myScene.Draw(this->trackCam,screenWidth,screenHeight);
+			float ZCam = trackCam.getm_fDistance();
+			myScene.Draw(this->trackCam,screenWidth,screenHeight, ZCam);
 		}
 		finScene();
 		
@@ -96,16 +99,6 @@ namespace glimac {
 			myScene.panneauFin.Draw(trackCam,screenWidth,screenHeight);
 			return true;
 		}
-		// else if ((d - 38 >= 0) && (myScene.getId() == 2))
-		// {
-		// 	myScene.panneauFin.Draw(trackCam,screenWidth,screenHeight);
-		// 	return true;
-		// }
-		// else if ((d - 56 >= 0) && (myScene.getId() == 3))
-		// {
-		// 	myScene.panneauFin.Draw(trackCam,screenWidth,screenHeight);
-		// 	return true;
-		// }
 		return false;
 	}
 

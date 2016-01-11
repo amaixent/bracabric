@@ -10,12 +10,6 @@
 
 using namespace glimac;
 
-// void loading(Monde myWorld,SDLWindowManager &windowManager){
-//     glClear(GL_COLOR_BUFFER_BIT);
-//     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//     myWorld.panneauLoading.Draw(myWorld.trackCam,800,600);
-//     windowManager.swapBuffers();
-// }
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
     GLuint screenWidth = 800, screenHeight = 600;
@@ -40,17 +34,10 @@ int main(int argc, char** argv) {
     // Setup some OpenGL options
     glEnable(GL_DEPTH_TEST);
 
-    
-
-    /*********************************
-     * HERE SHOULD COME THE INITIALIZATION CODE
-     *********************************/
     //Initialisation du monde
     Monde myWorld(screenWidth,screenHeight,windowManager);
 
-    //FreeflyCamera freefly;
-    //TrackballCamera trackCam;
- 
+
     // Application loop:
     bool done = false;
     bool finScene = false;
@@ -136,20 +123,11 @@ int main(int argc, char** argv) {
             //     std::cout << "resized !" << e.window.data1 << e.window.data2 << std::endl;
             // }
         }
-
-        /*********************************
-         * HERE SHOULD COME THE RENDERING CODE
-         *********************************/
-
         //On nettoit la fenêtre
         glClear(GL_COLOR_BUFFER_BIT);
-
-      //  glClearColor(1.01f, 1.05f, 0.05f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
- 
-        
-        myWorld.Draw();
 
+        myWorld.Draw();
 
         // Update the display
         windowManager.swapBuffers();

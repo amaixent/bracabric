@@ -106,7 +106,7 @@ Objet3D Tas::getObjetBase(){
     return objetBase;
 }
 
-void Tas::Draw(Shader shader){
+void Tas::Draw(Shader shader,float ZCam){
 	//Draw the loaded model
 
    	glm::mat4 modelMatrix = glm::mat4(1.0f);
@@ -119,10 +119,25 @@ void Tas::Draw(Shader shader){
    		objetBase.setRotation(listObjet[i].getangleRotation());
    		modelMatrix = getModelMatrix();
    		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
+        if (DrawCondition(modelMatrix[3][2], ZCam))
         objetBase.Draw(shader);
    	}
     
 }
+
+bool Tas::DrawCondition(int Zobj, float ZCam){
+    float d;
+    d = abs(ZCam) - abs(Zobj);
+    if (d>5)
+    {
+        return false;
+    }
+     if (d<-40)
+    {
+        return false;
+    }
+    return true;
+ }
 
 vec3 Tas::getPositionTas(){
     return position;

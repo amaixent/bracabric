@@ -79,7 +79,7 @@ void Scene::LoadTasFromFile(string fichierTas){
 
 }
 
-void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight){
+void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight,float ZCam){
 
     mySkybox.Draw(camera,screenWidth,screenHeight, id);
 
@@ -99,16 +99,13 @@ void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight
     glUniform3f(glGetUniformLocation(shader.Program , "uLightDir_vs"),temp[0],temp[1],temp[2]);
     vec4 temp2 = view*vec4(1.0,1.0,1.0,1.0);
     glUniform3f(glGetUniformLocation(shader.Program , "uLightPos_vs"),temp2[0],temp2[1],temp2[2]);
-    glUniform3f(glGetUniformLocation(shader.Program , "uLightIntensity"), 1.5,1.5,1.5);
+    glUniform3f(glGetUniformLocation(shader.Program , "uLightIntensity"), 1.0,1.0,1.0);
 
 
-    //glUniform3f(glGetUniformLocation(shader.Program , "ucolorObjet"), 1.0,1.0,1.0);
-    
     for (int i = 0; i < tabTas.size(); ++i)
     {   
-        if((tabTas[i].getlistObjetSize()!= 0) && camera.distance(tabTas[i].getObjetBase(), tabTas[i].getZ())){
-            //std::cout<<tabTas[i].getIdTas()<<std::endl;
-            tabTas[i].Draw(shader);
+        if(tabTas[i].getlistObjetSize()!= 0){
+            tabTas[i].Draw(shader, ZCam);
         }
             
     }

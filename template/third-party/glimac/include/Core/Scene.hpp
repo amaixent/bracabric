@@ -30,7 +30,7 @@ public:
 	void changeScene();
 	void chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierPanneauFin);
 	void LoadTasFromFile(string fichierTas);
-	void Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
+	void Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight,float ZCam);
 
 	/* data */
 };

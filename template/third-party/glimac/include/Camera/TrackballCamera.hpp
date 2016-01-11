@@ -38,7 +38,7 @@ public:
 
     glm::mat4 getViewMatrix() const;
 
-    bool distance(Objet3D o,float tasPositionZ);
+
 
 };
 

@@ -118,18 +118,4 @@ namespace glimac {
         return matrixrotateLeft * matrixrotateUp*matrixMoveFront;
     }
 
-    bool TrackballCamera::distance(Objet3D o, float tasPositionZ){
-        vec3 p = o.getposition()+ tasPositionZ;
-        //std::cout<<"dist = "<<std::abs(m_fDistance-p[2])<<" "<< o.getEmplacement()<<std::endl;
-       // std::cout<<"ou = "<<abs(p[2]) - abs(m_fDistance)<<" "<< o.getEmplacement()<<std::endl;
-        // if (abs(p[2]) - abs(m_fDistance)< -20)
-        // {
-        //     return false;
-        // }
-        // else if(std::abs(m_fDistance-p[2])>20 ){
-        //     return false;
-        // }
-        return true;
-    }
-
 }
