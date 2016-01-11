@@ -23,10 +23,10 @@ namespace glimac {
 
         /*On peut avancer et reculer mais on ne peut pas aller derrière le point de départ ! */
         /****Salut, boucle à désactiver pour placer les objets 3D****/
-        // if (m_fDistance>0.0)
-        // {
-        //   m_fDistance =0.0;
-        // }
+        if (m_fDistance>0.0)
+        {
+          m_fDistance =0.0;
+        }
     }
     
     float TrackballCamera::getm_fDistance(){
@@ -43,13 +43,13 @@ namespace glimac {
     void TrackballCamera::rotateLeft(float degrees) {
         m_fAngleX += degrees / 180 * M_PI;
         
-        // if (m_fAngleX > 1.20)
+        if (m_fAngleX > 1.20)
 
-        //     m_fAngleX = 1.20;
+            m_fAngleX = 1.20;
 
-        // else if (m_fAngleX < -1.25)
+        else if (m_fAngleX < -1.25)
 
-        //      m_fAngleX = -1.25;
+             m_fAngleX = -1.25;
 
     } 
 
@@ -64,13 +64,13 @@ namespace glimac {
     void TrackballCamera::rotateUp(float degrees){
          m_fAngleY += degrees / 180 * M_PI;
     
-        //   if (m_fAngleY > 0.95)
+          if (m_fAngleY > 0.95)
 
-        //     m_fAngleY = 0.95;
+            m_fAngleY = 0.95;
 
-        // else if (m_fAngleY < -1.11)
+        else if (m_fAngleY < -1.11)
 
-        //      m_fAngleY = -1.11;
+             m_fAngleY = -1.11;
     }
 
     float TrackballCamera::getm_fAngleY(){

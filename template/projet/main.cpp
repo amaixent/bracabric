@@ -52,35 +52,14 @@ int main(int argc, char** argv) {
                 done = true; // Leave the loop after this iteration
             }
             if((!myWorld.enPause()) && (!finScene)){
-                if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
-                 
-                    float mousePosX = mousePos.x/(float)screenWidth - 0.5;
-                    float mousePosY = mousePos.y/(float)screenWidth - 0.5;
-
-                    myWorld.trackCam.rotateLeft(2*mousePosX);
-                    myWorld.trackCam.rotateUp(2*mousePosY);
-                }
-
-                if (windowManager.isKeyPressed(SDLK_z)){
-
-                    if((myWorld.trackCam.getm_fAngleX()) == 0 && (myWorld.trackCam.getm_fAngleY() == 0)){
-                            myWorld.trackCam.moveFront(-0.1);
-                    }
-
-                    if((myWorld.trackCam.getm_fAngleX() != 0) || (myWorld.trackCam.getm_fAngleY() != 0)) {
-                            myWorld.trackCam.resetm_fAngleX();
-                            myWorld.trackCam.resetm_fAngleY();
-                    }
+            
+                if (windowManager.isKeyPressed(SDLK_UP)){
+                    myWorld.trackCam.moveFront(-0.8);
                 } 
-                if (windowManager.isKeyPressed(SDLK_s)) {
-                    myWorld.trackCam.moveFront(0.1);
-                    if(myWorld.trackCam.getm_fDistance() == 0.0) std::cout<<"Pour un point de vue plus large, aller dans TrackballCamera.cpp et suivre les indics :)"<<std::endl;
-                }
-
-                if (windowManager.isKeyPressed(SDLK_UP)) myWorld.trackCam.rotateUp(-0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
-                if (windowManager.isKeyPressed(SDLK_DOWN)) myWorld.trackCam.rotateUp(0.5);
-                if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-0.5);
-                if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(0.5);
+                if (windowManager.isKeyPressed(SDLK_DOWN)) myWorld.trackCam.moveFront(0.3);
+                    
+                if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-1.5);
+                if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(1.5);
 
                 
                 //On garde la liberté de changer à tout moment de scene pour la soutenance

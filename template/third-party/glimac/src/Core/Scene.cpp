@@ -96,7 +96,7 @@ void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight
     for (int i = 0; i < tabTas.size(); ++i)
     {   
         if(tabTas[i].getlistObjetSize()!= 0){
-            tabTas[i].Draw(shader, ZCam);
+            tabTas[i].Draw(shader, ZCam,id);
         }
             
     }

@@ -32,8 +32,8 @@ public:
 	Objet3D getObjetBase();
 	float getZ();
 
-	void Draw(Shader shader,float ZCam);
-	bool DrawCondition(int Zobj, float ZCam);
+	void Draw(Shader shader,float ZCam, int SceneId);
+	bool DrawCondition(int Zobj, float ZCam,int SceneId);
 	void changeScene();
 	
 
