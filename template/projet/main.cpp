@@ -10,6 +10,12 @@
 
 using namespace glimac;
 
+// void loading(Monde myWorld,SDLWindowManager &windowManager){
+//     glClear(GL_COLOR_BUFFER_BIT);
+//     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//     myWorld.panneauLoading.Draw(myWorld.trackCam,800,600);
+//     windowManager.swapBuffers();
+// }
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
     GLuint screenWidth = 800, screenHeight = 600;
@@ -40,7 +46,7 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
     //Initialisation du monde
-    Monde myWorld(screenWidth,screenHeight);
+    Monde myWorld(screenWidth,screenHeight,windowManager);
 
     //FreeflyCamera freefly;
     //TrackballCamera trackCam;
@@ -55,61 +61,60 @@ int main(int argc, char** argv) {
             if(e.type == SDL_QUIT) {
                 done = true; // Leave the loop after this iteration
             }
-            if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
-             
-                float mousePosX = mousePos.x/(float)screenWidth - 0.5;
-                float mousePosY = mousePos.y/(float)screenWidth - 0.5;
+            if(!myWorld.enPause()){
+                if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
+                 
+                    float mousePosX = mousePos.x/(float)screenWidth - 0.5;
+                    float mousePosY = mousePos.y/(float)screenWidth - 0.5;
 
-                myWorld.trackCam.rotateLeft(2*mousePosX);
-                myWorld.trackCam.rotateUp(2*mousePosY);
-            }
-
-                //if (windowManager.isKeyPressed(SDLK_z)) myWorld.trackCam.moveFront(-0.1);
-            if (windowManager.isKeyPressed(SDLK_z)){
-
-                if((myWorld.trackCam.getm_fAngleX()) == 0 && (myWorld.trackCam.getm_fAngleY() == 0)){
-                        myWorld.trackCam.moveFront(-0.1);
+                    myWorld.trackCam.rotateLeft(2*mousePosX);
+                    myWorld.trackCam.rotateUp(2*mousePosY);
                 }
 
-                if((myWorld.trackCam.getm_fAngleX() != 0) || (myWorld.trackCam.getm_fAngleY() != 0)) {
-                        myWorld.trackCam.resetm_fAngleX();
-                        myWorld.trackCam.resetm_fAngleY();
-                }
-            } 
-            if (windowManager.isKeyPressed(SDLK_s)) {
-                myWorld.trackCam.moveFront(0.1);
-                if(myWorld.trackCam.getm_fDistance() == 0.0) std::cout<<"Pour un point de vue plus large, aller dans TrackballCamera.cpp et suivre les indics :)"<<std::endl;
-            }
-            //if (windowManager.isKeyPressed(SDLK_q)) trackCam.moveLeft(-0.1);
-            //if (windowManager.isKeyPressed(SDLK_d)) trackCam.moveLeft(0.1);
-            
-            if (windowManager.isKeyPressed(SDLK_UP)) myWorld.trackCam.rotateUp(-0.7); //avec la souris on a plus d'aisance, ces touches sont un plus
-            if (windowManager.isKeyPressed(SDLK_DOWN)) myWorld.trackCam.rotateUp(0.7);
-            if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-0.7);
-            if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(0.7);
+                if (windowManager.isKeyPressed(SDLK_z)){
 
+                    if((myWorld.trackCam.getm_fAngleX()) == 0 && (myWorld.trackCam.getm_fAngleY() == 0)){
+                            myWorld.trackCam.moveFront(-0.1);
+                    }
+
+                    if((myWorld.trackCam.getm_fAngleX() != 0) || (myWorld.trackCam.getm_fAngleY() != 0)) {
+                            myWorld.trackCam.resetm_fAngleX();
+                            myWorld.trackCam.resetm_fAngleY();
+                    }
+                } 
+                if (windowManager.isKeyPressed(SDLK_s)) {
+                    myWorld.trackCam.moveFront(0.1);
+                    if(myWorld.trackCam.getm_fDistance() == 0.0) std::cout<<"Pour un point de vue plus large, aller dans TrackballCamera.cpp et suivre les indics :)"<<std::endl;
+                }
+
+                if (windowManager.isKeyPressed(SDLK_UP)) myWorld.trackCam.rotateUp(-0.5); //avec la souris on a plus d'aisance, ces touches sont un plus
+                if (windowManager.isKeyPressed(SDLK_DOWN)) myWorld.trackCam.rotateUp(0.5);
+                if (windowManager.isKeyPressed(SDLK_LEFT)) myWorld.trackCam.rotateLeft(-0.5);
+                if (windowManager.isKeyPressed(SDLK_RIGHT)) myWorld.trackCam.rotateLeft(0.5);
+
+                
+
+                if (windowManager.isKeyPressed(SDLK_v)) myWorld.chargeScene(1,windowManager);
+                if (windowManager.isKeyPressed(SDLK_b)) myWorld.chargeScene(2,windowManager);
+                if (windowManager.isKeyPressed(SDLK_n)) myWorld.chargeScene(3,windowManager);
+            }
             if (windowManager.isKeyPressed(SDLK_SPACE)) myWorld.changePause();
+            // if (windowManager.isKeyPressed(SDLK_q)) done = true; //pour pouvoir quitter si jamais il y a un problème avec le plein écran
 
-            if (windowManager.isKeyPressed(SDLK_v)) myWorld.chargeScene(1);
-            if (windowManager.isKeyPressed(SDLK_b)) myWorld.chargeScene(2);
-            if (windowManager.isKeyPressed(SDLK_n)) myWorld.chargeScene(3);
-
-            if (windowManager.isKeyPressed(SDLK_e)) done = true; //pour pouvoir quitter si jamais il y a un problème avec le plein écran
-
-            //test sur un événement
-            if(e.type == SDL_WINDOWEVENT_SIZE_CHANGED){
-                screenWidth = e.window.data1;
-                screenHeight = e.window.data2;
-                SDL_SetWindowSize(windowManager.getWindow(), screenWidth, screenHeight);
-                std::cout << "changed !" << e.window.data1 << e.window.data2 << std::endl;
-            }
-            //essai sur un autre événement pour voir mais en fait non ça ne passe pas !
-            if (e.type == SDL_WINDOWEVENT_RESIZED){
-                screenWidth  = e.window.data1;
-                screenHeight = e.window.data2;
-                SDL_SetWindowSize(windowManager.getWindow(), screenWidth, screenHeight);
-                std::cout << "resized !" << e.window.data1 << e.window.data2 << std::endl;
-            }
+            // //test sur un événement
+            // if(e.type == SDL_WINDOWEVENT_SIZE_CHANGED){
+            //     screenWidth = e.window.data1;
+            //     screenHeight = e.window.data2;
+            //     SDL_SetWindowSize(windowManager.getWindow(), screenWidth, screenHeight);
+            //     std::cout << "changed !" << e.window.data1 << e.window.data2 << std::endl;
+            // }
+            // //essai sur un autre événement pour voir mais en fait non ça ne passe pas !
+            // if (e.type == SDL_WINDOWEVENT_RESIZED){
+            //     screenWidth  = e.window.data1;
+            //     screenHeight = e.window.data2;
+            //     SDL_SetWindowSize(windowManager.getWindow(), screenWidth, screenHeight);
+            //     std::cout << "resized !" << e.window.data1 << e.window.data2 << std::endl;
+            // }
         }
 
         /*********************************
@@ -125,6 +130,7 @@ int main(int argc, char** argv) {
        
         
         myWorld.Draw();
+        //myWorld.panneauLoading.Draw(myWorld.trackCam,screenWidth,screenHeight);
 
 
 
@@ -133,7 +139,7 @@ int main(int argc, char** argv) {
     }
 
 
-    myWorld.chargeScene(0);
+    myWorld.chargeScene(0,windowManager);
     
     return EXIT_SUCCESS;
 }

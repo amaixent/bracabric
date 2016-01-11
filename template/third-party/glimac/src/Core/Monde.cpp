@@ -1,14 +1,13 @@
 #include "Core/Monde.hpp"
 
 namespace glimac {
-	Monde::Monde(GLuint width,GLuint height){
+	Monde::Monde(GLuint width,GLuint height,SDLWindowManager &windowManager){
 		
 		panneauDebut.loadPanneau("assets/panneau/debut_scene.jpg");
 		panneauLoading.loadPanneau("assets/panneau/loading.jpg");
-		pause = true;
 		screenWidth = width;
 		screenHeight = height;
-		chargeScene(1);
+		chargeScene(1,windowManager);
 
 	}
 
@@ -17,8 +16,8 @@ namespace glimac {
 	
 	}
 
-	void Monde::chargeScene(int identifiant){
-		//this->panneauLoading.Draw(this->trackCam,screenWidth,screenHeight);
+	void Monde::chargeScene(int identifiant,SDLWindowManager &windowManager){
+		
 		if (identifiant != myScene.getId())
 		{	
 			if (identifiant ==1)
@@ -26,11 +25,11 @@ namespace glimac {
 				this->myScene.chargeScene(1,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/normals.fs.glsl","projet/scenes/scene1/Tas.txt");
 			}
 			else if (identifiant == 2){
-				//this->panneauDebut.Draw();
+				loading(windowManager);
 				this->myScene.chargeScene(2,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene2/Tas.txt");
 			}
 			else if (identifiant == 3){
-				//this->myScene.chargeScene(3,"projet/shaders/model_loading.vs.glsl", "projet/shaders/model_loading.fs.glsl","projet/scenes/scene3/Tas.txt");
+				loading(windowManager);
 				this->myScene.chargeScene(3,"projet/shaders/lampe_torche.vs.glsl", "projet/shaders/lampe_torche.fs.glsl","projet/scenes/scene3/Tas.txt");
 			}
 			else if (identifiant ==0){
@@ -40,6 +39,8 @@ namespace glimac {
 			}
 			
 			trackCam.resetPositionInit(identifiant);
+			pause = 1;
+			changePause();
 		}	
 	}
 
@@ -53,20 +54,37 @@ namespace glimac {
 		if (pause == 3)
 		{
 			pause = 0;
+			
 		}
 		else{
 			pause++;
+			
+		}
+	}
+	bool Monde::enPause(){
+		if (pause == 2){
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 	void Monde::Draw(){
-		if (pause != 3)
+		if (enPause())
 		{
 			this->panneauDebut.Draw(this->trackCam,screenWidth,screenHeight);
 		}
 		else{
 			myScene.Draw(this->trackCam,screenWidth,screenHeight);
 		}
+
 		
 	}
+	void Monde::loading(SDLWindowManager &windowManager){
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    panneauLoading.Draw(trackCam,screenWidth,screenHeight);
+    windowManager.swapBuffers();
+}
 
 }
