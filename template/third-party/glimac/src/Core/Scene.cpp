@@ -4,15 +4,6 @@
 namespace glimac {
     Scene::Scene(){}
 
-    // Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas,string fichierPanneauFin){
-    //     shader.loadShader(fichierVs, fichierFs);
-    //     LoadTasFromFile(fichierTas);
-    //     id = identifiant;
-    //     idTrajectoire = 0;
-    //     panneauFin.loadPanneau(fichierPanneauFin);
-    //     mySkybox.loadSkybox(identifiant); 
-    // }
-
     Scene::~Scene(){
     }
 
@@ -28,7 +19,7 @@ void Scene::changeScene(){
     tabTas.clear();
 }
 
-void Scene::chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierPanneauFin){
+void Scene::chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,const GLchar* fichierPanneauFin){
     changeScene();
     shader.loadShader(fichierVs, fichierFs);
     LoadTasFromFile(fichierTas);
@@ -83,11 +74,11 @@ void Scene::Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight
 
     mySkybox.Draw(camera,screenWidth,screenHeight, id);
 
-    shader.Use();   // <-- Don't forget this one!
+    shader.Use();  
         
     // Transformation matrices
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);/*aiMemoryInfo::cameras.Zoom*/
-    glm::mat4 view = camera.getViewMatrix();//aiMemoryInfo::cameras.GetViewMatrix();
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)screenWidth/(float)screenHeight, 0.1f, 100.0f);
+    glm::mat4 view = camera.getViewMatrix();
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
     glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 

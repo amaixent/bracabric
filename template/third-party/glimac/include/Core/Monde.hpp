@@ -21,6 +21,7 @@ public:
 	TrackballCamera trackCam;
 	Monde(GLuint width,GLuint height,SDLWindowManager &windowManager);
 	~Monde();
+	
 
 	int getSceneId();
 	void chargeScene(int identifiant,SDLWindowManager &windowManager);

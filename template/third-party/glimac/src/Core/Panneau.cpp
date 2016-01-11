@@ -8,7 +8,7 @@ Panneau::~Panneau(){
 
 }
 
-void Panneau::loadPanneau(string cheminTexture){
+void Panneau::loadPanneau(const GLchar* cheminTexture){
 
     panneauShader.loadShader("projet/shaders/3D.vs.glsl", "projet/shaders/tex3D.fs.glsl");
 
@@ -53,7 +53,7 @@ void Panneau::loadPanneau(string cheminTexture){
     panneauTexture = loadTexture(cheminTexture);
 
 }
-GLuint Panneau::loadTexture(string cheminTexture)
+GLuint Panneau::loadTexture(const GLchar* cheminTexture)
 {
     GLuint texture;
     glGenTextures(1, &texture);

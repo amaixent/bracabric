@@ -35,6 +35,6 @@ public:
 	void Draw(Shader shader,float ZCam);
 	bool DrawCondition(int Zobj, float ZCam);
 	void changeScene();
-	//void action();
+	
 
 };

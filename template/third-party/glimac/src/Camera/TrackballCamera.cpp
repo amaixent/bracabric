@@ -113,8 +113,7 @@ namespace glimac {
         glm::mat4 matrixrotateLeft = glm::rotate( MatrixId, m_fAngleX, glm::vec3(0, 1, 0) ); //Axe x
         glm::mat4 matrixrotateUp = glm::rotate( MatrixId, m_fAngleY, glm::vec3(1, 0, 0) ); //Axe y
 
-        // std::cout<<matrixrotateUp<<std::endl;
-        // std::cout<<m_fAngleY<<std::endl;
+    
         return matrixrotateLeft * matrixrotateUp*matrixMoveFront;
     }
 

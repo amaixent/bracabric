@@ -22,16 +22,13 @@ private:
 public:
 	Panneau panneauFin;
 	Scene();
-	//Scene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierPanneauFin);
 	~Scene();
 
-	//List LoadObjectFromFile(string fichierObjet, List ListObjet);
 	int getId();
 	void changeScene();
-	void chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierPanneauFin);
+	void chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,const GLchar* fichierPanneauFin);
 	void LoadTasFromFile(string fichierTas);
 	void Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight,float ZCam);
 
-	/* data */
 };
 }

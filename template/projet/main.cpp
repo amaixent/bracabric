@@ -41,13 +41,14 @@ int main(int argc, char** argv) {
     // Application loop:
     bool done = false;
     bool finScene = false;
+    int fullscreen = 0;
     while(!done) {
         // Event loop:
         finScene = myWorld.finScene();
         SDL_Event e;
         glm::ivec2 mousePos = windowManager.getMousePosition();
         while(windowManager.pollEvent(e)) {
-            if(e.type == SDL_QUIT) {
+            if((e.type == SDL_QUIT) || windowManager.isKeyPressed(SDLK_ESCAPE)) {
                 done = true; // Leave the loop after this iteration
             }
             if((!myWorld.enPause()) && (!finScene)){
@@ -106,22 +107,21 @@ int main(int argc, char** argv) {
             }
 
             if (windowManager.isKeyPressed(SDLK_SPACE)) myWorld.changePause();
-            // if (windowManager.isKeyPressed(SDLK_q)) done = true; //pour pouvoir quitter si jamais il y a un problème avec le plein écran
 
-            // //test sur un événement
-            // if(e.type == SDL_WINDOWEVENT_SIZE_CHANGED){
-            //     screenWidth = e.window.data1;
-            //     screenHeight = e.window.data2;
-            //     SDL_SetWindowSize(windowManager.getWindow(), screenWidth, screenHeight);
-            //     std::cout << "changed !" << e.window.data1 << e.window.data2 << std::endl;
-            // }
-            // //essai sur un autre événement pour voir mais en fait non ça ne passe pas !
-            // if (e.type == SDL_WINDOWEVENT_RESIZED){
-            //     screenWidth  = e.window.data1;
-            //     screenHeight = e.window.data2;
-            //     SDL_SetWindowSize(windowManager.getWindow(), screenWidth, screenHeight);
-            //     std::cout << "resized !" << e.window.data1 << e.window.data2 << std::endl;
-            // }
+              if ( windowManager.isKeyPressed(SDLK_f)) // Touche f
+            {
+                // Alterne du mode plein écran au mode fenêtré
+                if ( fullscreen == 0 )
+                {
+                    fullscreen = 1;
+                    SDL_SetWindowFullscreen(windowManager.getWindow() ,SDL_WINDOW_FULLSCREEN);
+                }
+                else if ( fullscreen == 1 )
+                {
+                    fullscreen = 0;
+                    SDL_SetWindowFullscreen(windowManager.getWindow() ,0);
+                }
+            }
         }
         //On nettoit la fenêtre
         glClear(GL_COLOR_BUFFER_BIT);

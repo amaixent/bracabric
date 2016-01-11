@@ -22,14 +22,14 @@ private:
 	Shader panneauShader;
     GLuint panneauTexture;
     GLuint panneauVAO, panneauVBO, panneauEBO;
-    GLuint loadTexture(string cheminTexture);
+    GLuint loadTexture(const GLchar* cheminTexture);
 
 	
 public:
 	Panneau();
 	~Panneau();
 
-	void loadPanneau(string cheminTexture);
+	void loadPanneau(const GLchar* cheminTexture);
 	void fermeturePanneau();
 	void Draw(TrackballCamera camera, GLuint screenWidth, GLuint screenHeight);
 
