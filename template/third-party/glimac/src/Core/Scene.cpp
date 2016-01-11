@@ -4,13 +4,14 @@
 namespace glimac {
     Scene::Scene(){}
 
-    Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas){
-        shader.loadShader(fichierVs, fichierFs);
-        LoadTasFromFile(fichierTas);
-        id = identifiant;
-        idTrajectoire = 0;
-        mySkybox.loadSkybox(identifiant); 
-    }
+    // Scene::Scene(int identifiant,string fichierVs, string fichierFs, string fichierTas,string fichierPanneauFin){
+    //     shader.loadShader(fichierVs, fichierFs);
+    //     LoadTasFromFile(fichierTas);
+    //     id = identifiant;
+    //     idTrajectoire = 0;
+    //     panneauFin.loadPanneau(fichierPanneauFin);
+    //     mySkybox.loadSkybox(identifiant); 
+    // }
 
     Scene::~Scene(){
     }
@@ -27,13 +28,14 @@ void Scene::changeScene(){
     tabTas.clear();
 }
 
-void Scene::chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas){
+void Scene::chargeScene(int identifiant, string fichierVs,string fichierFs,string fichierTas,string fichierPanneauFin){
     changeScene();
     shader.loadShader(fichierVs, fichierFs);
     LoadTasFromFile(fichierTas);
     id = identifiant;
     idTrajectoire = 0;
     mySkybox.loadSkybox(identifiant);
+    panneauFin.loadPanneau(fichierPanneauFin);
 
 }   
 

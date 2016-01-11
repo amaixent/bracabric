@@ -27,6 +27,7 @@ public:
 	void Draw();
 	void changePause();
 	void loading(SDLWindowManager &windowManager);
+	bool finScene();
 	bool enPause();
 };
 }
